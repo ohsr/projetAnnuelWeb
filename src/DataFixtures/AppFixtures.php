@@ -5,6 +5,8 @@ namespace App\DataFixtures;
 use App\Entity\Category;
 use App\Entity\School;
 use App\Entity\User;
+use App\Entity\UserCommentSchool;
+use App\Entity\UserNoteSchool;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Faker;
@@ -24,6 +26,11 @@ class AppFixtures extends Fixture
         $manager->persist($category);
         return $category;
     }
+    public function getRandom($entity,$manager){
+        $data = $manager->getRepository($entity)->findAll();
+        shuffle($data);
+        return $data[0];
+    }
     public function load(ObjectManager $manager)
     {
         $faker = Faker\Factory::create('fr_FR');
@@ -42,6 +49,8 @@ class AppFixtures extends Fixture
             $user->setEmail($faker->email);
             $user->setPassword($this->encoder->encodePassword($user,"Password"));
             $user->setRoles(["ROLE_USER"]);
+            $user->setFirstName($faker->firstName);
+            $user->setLastName($faker->lastName);
             $manager->persist($user);
         }
         $manager->flush();
@@ -58,6 +67,28 @@ class AppFixtures extends Fixture
             $school->setPostalCode($faker->postcode);
             $school->setDepartment($faker->departmentName);
             $manager->persist($school);
+        }
+        $manager->flush();
+
+        for($h=0; $h<=5; $h++){
+            $userNoteSchool = new UserNoteSchool();
+            $userCommentSchool = new UserCommentSchool();
+            $userFound = $this->getRandom(User::class,$manager);
+            $schoolFound = $this->getRandom(School::class,$manager);
+            $categoryFound = $this->getRandom(Category::class,$manager);
+
+            $userNoteSchool->setUsers($userFound);
+            $userNoteSchool->setSchools($schoolFound);
+            $userNoteSchool->setCategorys($categoryFound);
+            $userNoteSchool->setNote($faker->numberBetween(0,5));
+            $manager->persist($userNoteSchool);
+            $userCommentSchool->setUsers($userFound);
+            $userCommentSchool->setSchools($schoolFound);
+            $userCommentSchool->setCategorys($categoryFound);
+            $userCommentSchool->setComment($faker->realText(200));
+
+            $userNoteSchool->setCreatedAt(new \DateTime("now"));
+            $manager->persist($userCommentSchool);
         }
         $manager->flush();
     }

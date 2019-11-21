@@ -1455,120 +1455,62 @@
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="360" parent="333" name="users_note_id">
-      <Position>19</Position>
-      <DataType>int(11)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="361" parent="333" name="IDX_F99EDABBD6ED7C9F">
-      <ColNames>users_note_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="362" parent="333" name="PRIMARY">
+    <key id="360" parent="333" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="363" parent="333" name="FK_F99EDABBD6ED7C9F">
-      <ColNames>users_note_id</ColNames>
-      <RefTableName>user_note_school</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="364" parent="334" name="id">
+    <column id="361" parent="334" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="365" parent="334" name="email">
+    <column id="362" parent="334" name="email">
       <Position>2</Position>
       <DataType>varchar(180)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="366" parent="334" name="roles">
+    <column id="363" parent="334" name="roles">
       <Position>3</Position>
+      <Comment>(DC2Type:json)</Comment>
       <DataType>longtext|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
-      <Collation>utf8mb4_bin</Collation>
     </column>
-    <column id="367" parent="334" name="password">
+    <column id="364" parent="334" name="password">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="368" parent="334" name="note_school_id">
-      <Position>5</Position>
-      <DataType>int(11)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="369" parent="334" name="UNIQ_8D93D649E7927C74">
+    <index id="365" parent="334" name="UNIQ_8D93D649E7927C74">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="370" parent="334" name="IDX_8D93D649D48DA271">
-      <ColNames>note_school_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="371" parent="334" name="PRIMARY">
+    <key id="366" parent="334" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="372" parent="334" name="UNIQ_8D93D649E7927C74">
+    <key id="367" parent="334" name="UNIQ_8D93D649E7927C74">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>UNIQ_8D93D649E7927C74</UnderlyingIndexName>
     </key>
-    <foreign-key id="373" parent="334" name="FK_8D93D649D48DA271">
-      <ColNames>note_school_id</ColNames>
-      <RefTableName>user_note_school</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <check id="374" parent="334" name="roles">
-      <Predicate>json_valid(`roles`)</Predicate>
-    </check>
-    <column id="375" parent="335" name="id">
+    <column id="368" parent="335" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="376" parent="335" name="categorys_id">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="377" parent="335" name="note">
-      <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="378" parent="335" name="created_at">
-      <Position>4</Position>
-      <DataType>datetime|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="379" parent="335" name="IDX_485744FAA96778EC">
-      <ColNames>categorys_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="380" parent="335" name="PRIMARY">
+    <key id="369" parent="335" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="381" parent="335" name="FK_485744FAA96778EC">
-      <ColNames>categorys_id</ColNames>
-      <RefTableName>category</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
   </database-model>
 </dataSource>

@@ -2,17 +2,15 @@
 
 namespace App\Entity;
 
-
-use ApiPlatform\Core\Annotation\ApiSubresource;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\UserNoteSchoolRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\UserCommentSchoolRepository")
  * @ApiResource()
  */
-class UserNoteSchool
+class UserCommentSchool
 {
     /**
      * @ORM\Id()
@@ -22,35 +20,28 @@ class UserNoteSchool
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="notesSchool")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="commentsSchool")
      * @ORM\JoinColumn(nullable=true)
-     * @Groups({"schoolView"})
      */
     private $users;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\School", inversedBy="notesUser")
+     * @ORM\ManyToOne(targetEntity="App\Entity\School", inversedBy="commentsUser")
      * @ORM\JoinColumn(nullable=true)
      */
     private $schools;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="notes")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="comments")
      * @ORM\JoinColumn(nullable=true)
-     * @Groups({"schoolView"})
      */
     private $categorys;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="text")
      * @Groups({"schoolView"})
      */
-    private $note;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $createdAt;
+    private $comment;
 
     public function getId(): ?int
     {
@@ -93,26 +84,14 @@ class UserNoteSchool
         return $this;
     }
 
-    public function getNote(): ?int
+    public function getComment(): ?string
     {
-        return $this->note;
+        return $this->comment;
     }
 
-    public function setNote(int $note): self
+    public function setComment(string $comment): self
     {
-        $this->note = $note;
-
-        return $this;
-    }
-
-    public function getCreatedAt(): ?\DateTimeInterface
-    {
-        return $this->createdAt;
-    }
-
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
-    {
-        $this->createdAt = $createdAt;
+        $this->comment = $comment;
 
         return $this;
     }

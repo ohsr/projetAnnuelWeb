@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="projetAnnuel" uuid="dcf758a8-34f7-4935-a858-a27833dbc2ee">
+    <data-source name="projetAnnuel" uuid="04ef5eb6-31af-4f26-a720-763475c53e05">
       <database-info product="MySQL" version="5.5.5-10.4.8-MariaDB-1:10.4.8+maria~bionic-log" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.15 (Revision: 79a4336f140499bd22dd07f02b708e163844e3d5)" dbms="MARIADB" exact-version="10.4.8" exact-driver-version="8.0">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>

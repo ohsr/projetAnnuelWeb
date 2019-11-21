@@ -2,10 +2,18 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiSubresource;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\SchoolRepository")
+ * @ApiResource(
+ *     normalizationContext={"groups"={"schoolView"}}
+ * )
  */
 class School
 {
@@ -13,86 +21,103 @@ class School
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"schoolView"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"schoolView"})
      */
     private $uai;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"schoolView"})
      */
     private $siret;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"schoolView"})
      */
     private $type;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"schoolView"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     *cc
      */
     private $sigle;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"schoolView"})
      */
     private $status;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"schoolView"})
      */
     private $adress;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"schoolView"})
      */
     private $postalCode;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"schoolView"})
      */
     private $cityCode;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"schoolView"})
      */
     private $phone;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"schoolView"})
      */
     private $department;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"schoolView"})
      */
     private $academy;
 
     /**
      * @ORM\Column(type="integer", length=255, nullable=true)
+     * @Groups({"schoolView"})
      */
     private $regionNum;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"schoolView"})
      */
     private $latitude;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"schoolView"})
      */
     private $longitude;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"schoolView"})
      */
     private $onisepLink;
 
@@ -102,9 +127,25 @@ class School
     private $createdAt;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\UserNoteSchool", inversedBy="school")
+     * @ORM\OneToMany(targetEntity="App\Entity\UserNoteSchool", mappedBy="schools", orphanRemoval=true)
+     * @ApiSubresource()
+     * @Groups({"schoolView"})
      */
-    private $usersNote;
+    private $notesUser;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\UserCommentSchool", mappedBy="schools", orphanRemoval=true)
+     * @ApiSubresource()
+     * @Groups({"schoolView"})
+     */
+    private $commentsUser;
+
+    public function __construct()
+    {
+        $this->notesUser = new ArrayCollection();
+        $this->commentsUser = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -315,15 +356,68 @@ class School
         return $this;
     }
 
-    public function getUsersNote(): ?UserNoteSchool
+    /**
+     * @return Collection|UserNoteSchool[]
+     */
+    public function getNotesUser(): Collection
     {
-        return $this->usersNote;
+        return $this->notesUser;
     }
 
-    public function setUsersNote(?UserNoteSchool $usersNote): self
+    public function addNotesUser(UserNoteSchool $notesUser): self
     {
-        $this->usersNote = $usersNote;
+        if (!$this->notesUser->contains($notesUser)) {
+            $this->notesUser[] = $notesUser;
+            $notesUser->setSchools($this);
+        }
 
         return $this;
     }
+
+    public function removeNotesUser(UserNoteSchool $notesUser): self
+    {
+        if ($this->notesUser->contains($notesUser)) {
+            $this->notesUser->removeElement($notesUser);
+            // set the owning side to null (unless already changed)
+            if ($notesUser->getSchools() === $this) {
+                $notesUser->setSchools(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|UserCommentSchool[]
+     */
+    public function getCommentsUser(): Collection
+    {
+        return $this->commentsUser;
+    }
+
+    public function addCommentsUser(UserCommentSchool $commentsUser): self
+    {
+        if (!$this->commentsUser->contains($commentsUser)) {
+            $this->commentsUser[] = $commentsUser;
+            $commentsUser->setSchools($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentsUser(UserCommentSchool $commentsUser): self
+    {
+        if ($this->commentsUser->contains($commentsUser)) {
+            $this->commentsUser->removeElement($commentsUser);
+            // set the owning side to null (unless already changed)
+            if ($commentsUser->getSchools() === $this) {
+                $commentsUser->setSchools(null);
+            }
+        }
+
+        return $this;
+    }
+
+
+
 }

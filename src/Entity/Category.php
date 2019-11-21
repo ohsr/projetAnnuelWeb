@@ -5,9 +5,12 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CategoryRepository")
+ * @ApiResource()
  */
 class Category
 {
@@ -15,23 +18,32 @@ class Category
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"schoolView"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     *  @Groups({"schoolView"})
      */
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\UserNoteSchool", mappedBy="categorys")
+     * @ORM\OneToMany(targetEntity="App\Entity\UserNoteSchool", mappedBy="categorys", orphanRemoval=true)
      */
-    private $userNoteSchools;
+    private $notes;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\UserCommentSchool", mappedBy="categorys", orphanRemoval=true)
+     */
+    private $comments;
 
     public function __construct()
     {
-        $this->userNoteSchools = new ArrayCollection();
+        $this->notes = new ArrayCollection();
+        $this->comments = new ArrayCollection();
     }
+
 
     public function getId(): ?int
     {
@@ -53,28 +65,59 @@ class Category
     /**
      * @return Collection|UserNoteSchool[]
      */
-    public function getUserNoteSchools(): Collection
+    public function getNotes(): Collection
     {
-        return $this->userNoteSchools;
+        return $this->notes;
     }
 
-    public function addUserNoteSchool(UserNoteSchool $userNoteSchool): self
+    public function addNote(UserNoteSchool $note): self
     {
-        if (!$this->userNoteSchools->contains($userNoteSchool)) {
-            $this->userNoteSchools[] = $userNoteSchool;
-            $userNoteSchool->setCategorys($this);
+        if (!$this->notes->contains($note)) {
+            $this->notes[] = $note;
+            $note->setCategorys($this);
         }
 
         return $this;
     }
 
-    public function removeUserNoteSchool(UserNoteSchool $userNoteSchool): self
+    public function removeNote(UserNoteSchool $note): self
     {
-        if ($this->userNoteSchools->contains($userNoteSchool)) {
-            $this->userNoteSchools->removeElement($userNoteSchool);
+        if ($this->notes->contains($note)) {
+            $this->notes->removeElement($note);
             // set the owning side to null (unless already changed)
-            if ($userNoteSchool->getCategorys() === $this) {
-                $userNoteSchool->setCategorys(null);
+            if ($note->getCategorys() === $this) {
+                $note->setCategorys(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|UserCommentSchool[]
+     */
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(UserCommentSchool $comment): self
+    {
+        if (!$this->comments->contains($comment)) {
+            $this->comments[] = $comment;
+            $comment->setCategorys($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(UserCommentSchool $comment): self
+    {
+        if ($this->comments->contains($comment)) {
+            $this->comments->removeElement($comment);
+            // set the owning side to null (unless already changed)
+            if ($comment->getCategorys() === $this) {
+                $comment->setCategorys(null);
             }
         }
 

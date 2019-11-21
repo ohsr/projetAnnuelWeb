@@ -2,11 +2,17 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @ApiResource(normalizationContext={"groups"={"userView"}})
  */
 class User implements UserInterface
 {
@@ -14,16 +20,19 @@ class User implements UserInterface
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"schoolView","userView"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Groups({"userView"})
      */
     private $email;
 
     /**
      * @ORM\Column(type="json")
+     * @Groups({"userView"})
      */
     private $roles = [];
 
@@ -34,9 +43,33 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\UserNoteSchool", inversedBy="user")
+     * @ORM\OneToMany(targetEntity="App\Entity\UserNoteSchool", mappedBy="users", orphanRemoval=true)
      */
-    private $noteSchool;
+    private $notesSchool;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\UserCommentSchool", mappedBy="users", orphanRemoval=true)
+     */
+    private $commentsSchool;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Groups({"schoolView","userView"})
+     *
+     */
+    private $firstName;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Groups({"schoolView","userView"})
+     */
+    private $lastName;
+
+    public function __construct()
+    {
+        $this->notesSchool = new ArrayCollection();
+        $this->commentsSchool = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -116,15 +149,90 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 
-    public function getNoteSchool(): ?UserNoteSchool
+    /**
+     * @return Collection|UserNoteSchool[]
+     */
+    public function getNotes(): Collection
     {
-        return $this->noteSchool;
+        return $this->notesSchool;
     }
 
-    public function setNoteSchool(?UserNoteSchool $noteSchool): self
+    public function addNote(UserNoteSchool $noteSchool): self
     {
-        $this->noteSchool = $noteSchool;
+        if (!$this->notesSchool->contains($noteSchool)) {
+            $this->notesSchool[] = $noteSchool;
+            $noteSchool->setUsers($this);
+        }
 
         return $this;
     }
+
+    public function removeNote(UserNoteSchool $noteSchool): self
+    {
+        if ($this->notesSchool->contains($noteSchool)) {
+            $this->notesSchool->removeElement($noteSchool);
+            // set the owning side to null (unless already changed)
+            if ($noteSchool->getUsers() === $this) {
+                $noteSchool->setUsers(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|UserCommentSchool[]
+     */
+    public function getCommentsSchool(): Collection
+    {
+        return $this->commentsSchool;
+    }
+
+    public function addCommentsSchool(UserCommentSchool $commentsSchool): self
+    {
+        if (!$this->commentsSchool->contains($commentsSchool)) {
+            $this->commentsSchool[] = $commentsSchool;
+            $commentsSchool->setUsers($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentsSchool(UserCommentSchool $commentsSchool): self
+    {
+        if ($this->commentsSchool->contains($commentsSchool)) {
+            $this->commentsSchool->removeElement($commentsSchool);
+            // set the owning side to null (unless already changed)
+            if ($commentsSchool->getUsers() === $this) {
+                $commentsSchool->setUsers(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getFirstName(): ?string
+    {
+        return $this->firstName;
+    }
+
+    public function setFirstName(string $firstName): self
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    public function getLastName(): ?string
+    {
+        return $this->lastName;
+    }
+
+    public function setLastName(string $lastName): self
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
 }
