@@ -2,27 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d4324e1-3564-44b6-8327-c116fa5fcd2a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dcf758a8-34f7-4935-a858-a27833dbc2ee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dcf758a8-34f7-4935-a858-a27833dbc2ee.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dcf758a8-34f7-4935-a858-a27833dbc2ee.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dcf758a8-34f7-4935-a858-a27833dbc2ee/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/projetAnnuel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projetAnnuel.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/School.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/School.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/UserNoteSchool.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191120134736.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191120141833.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -183,6 +172,7 @@
       <path value="$PROJECT_DIR$/vendor/api-platform/api-pack" />
       <path value="$PROJECT_DIR$/vendor/willdurand/negotiation" />
       <path value="$PROJECT_DIR$/vendor/nelmio/cors-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Tslwbj57E7dgMNLeiNISEaAO8r" />
@@ -217,6 +207,8 @@
       <updated>1574256923420</updated>
       <workItem from="1574256926884" duration="952000" />
       <workItem from="1574258080050" duration="22507000" />
+      <workItem from="1574345817250" duration="2926000" />
+      <workItem from="1574349022620" duration="578000" />
     </task>
     <servers />
   </component>
@@ -228,7 +220,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
