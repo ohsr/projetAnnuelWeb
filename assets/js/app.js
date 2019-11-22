@@ -5,6 +5,7 @@ import NavBar from "./componants/navbar";
 import Home from "./pages/Home";
 import IndexSchool from "./pages/School/indexSchool";
 
+
 require('../css/app.css');
 
 function App(){
