@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d4324e1-3564-44b6-8327-c116fa5fcd2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dcf758a8-34f7-4935-a858-a27833dbc2ee.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dcf758a8-34f7-4935-a858-a27833dbc2ee/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/projetAnnuel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projetAnnuel.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/componants/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/componants/navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/School.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/School.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -176,12 +169,19 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1Tslwbj57E7dgMNLeiNISEaAO8r" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/js/pages" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -208,7 +208,9 @@
       <workItem from="1574256926884" duration="952000" />
       <workItem from="1574258080050" duration="22507000" />
       <workItem from="1574345817250" duration="2926000" />
-      <workItem from="1574349022620" duration="578000" />
+      <workItem from="1574349022620" duration="1148000" />
+      <workItem from="1574410150348" duration="4247000" />
+      <workItem from="1574415075372" duration="97000" />
     </task>
     <servers />
   </component>

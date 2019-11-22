@@ -51,7 +51,7 @@ class School
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     *cc
+     * @Groups({"schoolView"})
      */
     private $sigle;
 

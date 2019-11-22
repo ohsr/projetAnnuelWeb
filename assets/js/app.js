@@ -1,19 +1,23 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-
+import {HashRouter,Route,Switch} from "react-router-dom";
 import NavBar from "./componants/navbar";
+import Home from "./pages/Home";
+import IndexSchool from "./pages/School/indexSchool";
 
 require('../css/app.css');
 
 function App(){
     return(
-        <div>
-            <NavBar/>
-            <div className="container text-center mt-5">
-                <h1>ReactJs + Webpack 🐑 </h1>
-                <button className="btn btn-primary mt-1">En savoir plus</button>
-            </div>
-        </div>
+            <HashRouter>
+                <NavBar/>
+                <div className="container mt-5 text-center">
+                    <Switch>
+                        <Route path="/schools" component={() => <IndexSchool/>} />
+                        <Route path="/" component={() => <Home/>} />
+                    </Switch>
+                </div>
+            </HashRouter>
     )
 }
 
