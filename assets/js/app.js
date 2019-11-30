@@ -1,21 +1,27 @@
 import React from 'react';
 import ReactDOM from "react-dom";
 import {HashRouter,Route,Switch} from "react-router-dom";
-import NavBar from "./componants/navbar";
+import Navbar from "./componants/Navbar";
 import Home from "./pages/Home";
 import IndexSchool from "./pages/School/indexSchool";
 import IndexUser from "./pages/User/indexUser";
 import IndexCategory from "./pages/Category/indexCategory";
-
+import NewSchool from "./pages/School/newSchool";
+import UpdateSchool from "./pages/School/updateSchool";
 
 require('../css/app.css');
+import $ from 'jquery';
+import Popper from 'popper.js';
+import 'bootstrap/dist/js/bootstrap.bundle.min'
 
 function App(){
     return(
             <HashRouter>
-                <NavBar/>
+                <Navbar/>
                 <div className="container mt-5 text-center">
                     <Switch>
+                        <Route path="/schools/new" component={() => <NewSchool/>} />
+                        <Route path="/schools/:id" render = {props => <UpdateSchool {...props}/>} />
                         <Route path="/schools" component={() => <IndexSchool/>} />
                         <Route path="/users" component={() => <IndexUser/>} />
                         <Route path="/categorys" component={() => <IndexCategory/>} />

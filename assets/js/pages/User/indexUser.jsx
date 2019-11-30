@@ -13,7 +13,7 @@ const IndexUser = () =>{
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 9;
     useEffect(() =>{
-        axios.get(`http://192.168.22.10/api/users?page=${currentPage}`)
+        axios.get(`${process.env.REACT_APP_API}/users?page=${currentPage}`)
             .then(response => {
                 setUsers(response.data['hydra:member']);
                 setTotalItems(response.data['hydra:totalItems']);

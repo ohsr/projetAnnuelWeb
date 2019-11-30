@@ -13,8 +13,7 @@ const IndexCategory = () =>{
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 9;
     useEffect(() =>{
-        console.log(process.env.REACT_APP_API);
-        axios.get(`http://192.168.22.10/api/categories?page=${currentPage}`)
+        axios.get(`${process.env.REACT_APP_API}/categories?page=${currentPage}`)
             .then(response => {
                 setCategorys(response.data['hydra:member']);
                 setTotalItems(response.data['hydra:totalItems']);

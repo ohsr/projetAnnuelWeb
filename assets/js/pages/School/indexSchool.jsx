@@ -1,20 +1,21 @@
 import React,{useState,useEffect} from 'react';
-import axios from "axios";
+import {NavLink} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faIdCard, faSchool,faTag,faRoad,faDivide,faComment,faCog, faTruckLoading } from '@fortawesome/free-solid-svg-icons';
+import { faIdCard, faSchool,faTag,faRoad,faDivide,faComment } from '@fortawesome/free-solid-svg-icons';
 import ClipLoader from 'react-spinners/ClipLoader';
+
+import SchoolService from "../../services/SchoolService";
 
 import Pagination from "../../componants/Pagination";
 
 const IndexSchool = () =>{
-
     const [schools,setSchools] = useState([]);
     const [loading,setLoading ] = useState(true);
     const [totalItems, setTotalItems] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 9;
     useEffect(() =>{
-        axios.get(`http://192.168.22.10/api/schools?page=${currentPage}`)
+        SchoolService.findAll(currentPage)
             .then(response => {
                 setSchools(response.data['hydra:member']);
                 setTotalItems(response.data['hydra:totalItems']);
@@ -51,7 +52,9 @@ const IndexSchool = () =>{
                     <th><FontAwesomeIcon icon={ faRoad} /><br/> Adresse</th>
                     <th><FontAwesomeIcon icon={ faDivide} /><br/> Notes</th>
                     <th><FontAwesomeIcon icon={ faComment} /><br/> Commentaires</th>
-                    <th colSpan={2}><FontAwesomeIcon icon={ faCog} /><br/> Actions</th>
+                    <th colSpan={2}>
+                        <NavLink className="btn btn-block btn-success btn-sm" to="/schools/new">Ajouter une Ecole</NavLink>
+                    </th>
                     </thead>
                     <tbody>
                     {schools.map(school =>(
@@ -65,7 +68,7 @@ const IndexSchool = () =>{
                         <td>{school.notesUser.length}</td>
                         <td>{school.commentsUser.length}</td>
                         <td>
-                            <button className="btn btn-warning btn-sm">Modifier</button>
+                            <NavLink className="btn btn-warning btn-sm" to={"/schools/"+school.id}> Modifier</NavLink>
                         </td>
                         <td>
                             <button className="btn btn-danger btn-sm">Supprimer</button>

@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d4324e1-3564-44b6-8327-c116fa5fcd2a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/componants/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/componants/navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/componants/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/componants/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/pages/Category/indexCategory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/Category/indexCategory.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/pages/School/indexSchool.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/School/indexSchool.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/UserCommentSchool.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserCommentSchool.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/UserNoteSchool.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserNoteSchool.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/pages/User/indexUser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/User/indexUser.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,12 +43,6 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="projetAnnuel" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="projetAnnuel" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="projetAnnuel: schema" type="ebfa3cd1:MariaImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -177,12 +170,19 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/js/pages/Category" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -192,15 +192,20 @@
       <recent name="$PROJECT_DIR$/assets/js/pages" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:projetAnnuel" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -225,6 +230,11 @@
       <workItem from="1574708224641" duration="1362000" />
       <workItem from="1575114731244" duration="33000" />
       <workItem from="1575118372209" duration="100000" />
+      <workItem from="1575125353516" duration="3458000" />
+      <workItem from="1575129048067" duration="1644000" />
+      <workItem from="1575136391437" duration="47000" />
+      <workItem from="1575136441322" duration="684000" />
+      <workItem from="1575137136821" duration="3963000" />
     </task>
     <servers />
   </component>
@@ -243,5 +253,27 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="555" y="181" width="800" height="675" key="#Scopes" timestamp="1575136453256">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state x="555" y="181" width="800" height="675" key="#Scopes/0.0.1920.1041@0.0.1920.1041" timestamp="1575136453256" />
+    <state x="555" y="181" width="800" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575146738740">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state x="555" y="181" width="800" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1041@0.0.1920.1041" timestamp="1575146738740" />
+    <state width="220" height="539" key="HiddenNamespacesPopup" timestamp="1575146752140">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state width="220" height="539" key="HiddenNamespacesPopup/0.0.1920.1041@0.0.1920.1041" timestamp="1575146752140" />
+    <state x="874" y="274" key="SettingsEditor" timestamp="1575147271348">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state x="874" y="274" key="SettingsEditor/0.0.1920.1041@0.0.1920.1041" timestamp="1575147271348" />
+    <state x="636" y="105" width="648" height="828" key="find.popup" timestamp="1575125669076">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state x="636" y="105" width="648" height="828" key="find.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1575125669076" />
   </component>
 </project>
