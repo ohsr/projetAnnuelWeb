@@ -7,6 +7,9 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 }
 
 Encore
+    .configureDefinePlugin(options => {
+        options['process.env'].REACT_APP_API = JSON.stringify('salut');
+    })
     // directory where compiled assets will be stored
     .setOutputPath('public/build/')
     // public path used by the web server to access the output path

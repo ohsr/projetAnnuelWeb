@@ -22,6 +22,7 @@ class UserCommentSchool
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="commentsSchool")
      * @ORM\JoinColumn(nullable=true)
+     * @Groups({"schoolView"})
      */
     private $users;
 
@@ -34,12 +35,13 @@ class UserCommentSchool
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="comments")
      * @ORM\JoinColumn(nullable=true)
+     * @Groups({"schoolView"})
      */
     private $categorys;
 
     /**
      * @ORM\Column(type="text")
-     * @Groups({"schoolView"})
+     * @Groups({"schoolView","userView"})
      */
     private $comment;
 

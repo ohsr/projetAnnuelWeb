@@ -4,9 +4,13 @@
     <list default="true" id="7d4324e1-3564-44b6-8327-c116fa5fcd2a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/componants/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/componants/navbar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/pages/School/indexSchool.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/School/indexSchool.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/api_platform.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/api_platform.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/UserCommentSchool.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserCommentSchool.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/UserNoteSchool.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserNoteSchool.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -177,10 +181,13 @@
     <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/js/pages/Category" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/js/pages/Category" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/js/pages" />
     </key>
@@ -212,7 +219,12 @@
       <workItem from="1574345817250" duration="2926000" />
       <workItem from="1574349022620" duration="1148000" />
       <workItem from="1574410150348" duration="4247000" />
-      <workItem from="1574415075372" duration="4413000" />
+      <workItem from="1574415075372" duration="5697000" />
+      <workItem from="1574427172472" duration="589000" />
+      <workItem from="1574430439413" duration="6059000" />
+      <workItem from="1574708224641" duration="1362000" />
+      <workItem from="1575114731244" duration="33000" />
+      <workItem from="1575118372209" duration="100000" />
     </task>
     <servers />
   </component>

@@ -24,7 +24,7 @@ class UserNoteSchool
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="notesSchool")
      * @ORM\JoinColumn(nullable=true)
-     * @Groups({"schoolView"})
+     * @Groups({"schoolView",})
      */
     private $users;
 
@@ -43,7 +43,7 @@ class UserNoteSchool
 
     /**
      * @ORM\Column(type="integer")
-     * @Groups({"schoolView"})
+     * @Groups({"schoolView","userView"})
      */
     private $note;
 
