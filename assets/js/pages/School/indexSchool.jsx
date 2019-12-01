@@ -3,9 +3,7 @@ import {NavLink} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faIdCard, faSchool,faTag,faRoad,faDivide,faComment } from '@fortawesome/free-solid-svg-icons';
 import ClipLoader from 'react-spinners/ClipLoader';
-
 import SchoolService from "../../services/SchoolService";
-
 import Pagination from "../../componants/Pagination";
 
 const IndexSchool = () =>{

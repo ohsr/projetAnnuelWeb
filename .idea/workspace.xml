@@ -5,12 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/componants/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/componants/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/pages/Category/indexCategory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/Category/indexCategory.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/Home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/pages/School/indexSchool.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/School/indexSchool.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/pages/User/indexUser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/User/indexUser.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/services/SchoolService.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/services/SchoolService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/School.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/School.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +35,18 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="projetAnnuel" type="feb32156:DbDataSourceImpl" />
+        <item name="@projetAnnuel" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="projetAnnuel" type="feb32156:DbDataSourceImpl" />
+        <item name="@projetAnnuel" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@projetAnnuel" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="projetAnnuel: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -200,7 +204,7 @@
             <expand>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:projetAnnuel" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="root:@projetAnnuel" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -235,6 +239,7 @@
       <workItem from="1575136391437" duration="47000" />
       <workItem from="1575136441322" duration="684000" />
       <workItem from="1575137136821" duration="3963000" />
+      <workItem from="1575207672712" duration="6109000" />
     </task>
     <servers />
   </component>
@@ -259,10 +264,10 @@
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
     <state x="555" y="181" width="800" height="675" key="#Scopes/0.0.1920.1041@0.0.1920.1041" timestamp="1575136453256" />
-    <state x="555" y="181" width="800" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575146738740">
+    <state x="555" y="181" width="800" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575208384070">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
-    <state x="555" y="181" width="800" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1041@0.0.1920.1041" timestamp="1575146738740" />
+    <state x="555" y="181" width="800" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1041@0.0.1920.1041" timestamp="1575208384070" />
     <state width="220" height="539" key="HiddenNamespacesPopup" timestamp="1575146752140">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
@@ -275,5 +280,9 @@
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
     <state x="636" y="105" width="648" height="828" key="find.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1575125669076" />
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1575210358189">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1575210358189" />
   </component>
 </project>
