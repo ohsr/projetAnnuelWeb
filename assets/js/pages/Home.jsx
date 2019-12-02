@@ -4,6 +4,8 @@ import SchoolService from '../services/SchoolService';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar,faComment} from '@fortawesome/free-solid-svg-icons';
 import ClipLoader from 'react-spinners/ClipLoader';
+import {NavLink} from "react-router-dom";
+
 const Home = () =>{
     const [schools,setSchools] = useState([]);
     const [loading,setLoading ] = useState(true);
@@ -82,14 +84,9 @@ const Home = () =>{
                                             and views. Don't overload cards with extraneous information or actions.</p>
                                     </div>
                                     <div className="card-footer">
-                                        <button className="m-1 btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary"
-                                                type="button">
-                                            <FontAwesomeIcon icon={faStar} /> Noter
-                                        </button>
-                                        <button className="m-1 btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary"
-                                                type="button">
-                                            <FontAwesomeIcon icon={faComment} /> Commenter
-                                        </button>
+                                        <NavLink to={"/comment_note/"+school.id} className="m-1 btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary">
+                                            <FontAwesomeIcon icon={faStar} /> Noter & Commenter <FontAwesomeIcon icon={faComment} />
+                                        </NavLink>
                                     </div>
                                 </div>
                             </div>

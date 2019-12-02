@@ -8,6 +8,8 @@ import IndexUser from "./pages/User/indexUser";
 import IndexCategory from "./pages/Category/indexCategory";
 import NewSchool from "./pages/School/newSchool";
 import UpdateSchool from "./pages/School/updateSchool";
+import CommentNote from "./pages/CommentNote";
+
 
 require('../css/app.css');
 import $ from 'jquery';
@@ -20,6 +22,7 @@ function App(){
                 <Navbar/>
                 <div className="container mt-5 text-center">
                     <Switch>
+                        <Route path="/comment_note/:id" render = {props => <CommentNote {...props}/>} />
                         <Route path="/schools/new" component={() => <NewSchool/>} />
                         <Route path="/schools/:id" render = {props => <UpdateSchool {...props}/>} />
                         <Route path="/schools" component={() => <IndexSchool/>} />
