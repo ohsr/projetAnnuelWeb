@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7d4324e1-3564-44b6-8327-c116fa5fcd2a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/UserNoteSchool.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserNoteSchool.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/pages/CommentNote.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/CommentNote.jsx" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -195,15 +191,15 @@
       <recent name="$PROJECT_DIR$/assets/js/pages" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -235,6 +231,7 @@
       <workItem from="1575137136821" duration="3963000" />
       <workItem from="1575207672712" duration="6109000" />
       <workItem from="1575275893310" duration="2879000" />
+      <workItem from="1575409601884" duration="6461000" />
     </task>
     <servers />
   </component>
@@ -275,6 +272,10 @@
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
     <state x="636" y="105" width="648" height="828" key="find.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1575125669076" />
+    <state x="624" y="237" key="run.anything.popup" timestamp="1575415516045">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state x="624" y="237" key="run.anything.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1575415516045" />
     <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1575210358189">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
