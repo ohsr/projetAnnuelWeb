@@ -20,7 +20,7 @@ class User implements UserInterface
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @Groups({"schoolView","userView"})
+     * @Groups({"commentView","userView"})
      */
     private $id;
 
@@ -54,14 +54,14 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"schoolView","userView"})
+     * @Groups({"commentView","userView"})
      *
      */
     private $firstName;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"schoolView","userView"})
+     * @Groups({"commentView","userView"})
      */
     private $lastName;
 

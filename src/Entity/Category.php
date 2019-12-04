@@ -18,13 +18,13 @@ class Category
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @Groups({"schoolView","categoryView"})
+     * @Groups({"categoryView","commentView"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     *  @Groups({"schoolView","categoryView"})
+     *  @Groups({"categoryView"})
      */
     private $name;
 

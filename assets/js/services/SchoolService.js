@@ -18,6 +18,7 @@ function insertOne(data){
     return axios.post(api,data);
 }
 
+
 export default {
     findMainWindow: findMainWindow,
     findAll : findAll,

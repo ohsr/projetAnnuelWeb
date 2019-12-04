@@ -2,13 +2,18 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserCommentSchoolRepository")
- * @ApiResource()
+ * @ApiResource(
+ *      normalizationContext={"groups"={"commentView"}}
+ * )
+ * @ApiFilter(SearchFilter::class, properties={"schools": "exact","categorys": "exact"})
  */
 class UserCommentSchool
 {
@@ -16,13 +21,14 @@ class UserCommentSchool
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"commentView"})
      */
     private $id;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="commentsSchool")
-     * @ORM\JoinColumn(nullable=true)
-     * @Groups({"schoolView"})
+     * @ORM\JoinColumn(nullable=true))
+     * @Groups({"commentView"})
      */
     private $users;
 
@@ -35,13 +41,13 @@ class UserCommentSchool
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="comments")
      * @ORM\JoinColumn(nullable=true)
-     * @Groups({"schoolView"})
+     * @Groups({"commentView"})
      */
     private $categorys;
 
     /**
      * @ORM\Column(type="text")
-     * @Groups({"schoolView","userView"})
+     * @Groups({"commentView","userView"})
      */
     private $comment;
 
