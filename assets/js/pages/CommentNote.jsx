@@ -3,9 +3,9 @@ import ClipLoader from 'react-spinners/ClipLoader';
 import SchoolService from "../services/SchoolService";
 import CategoryService from "../services/CategoryService";
 import CommentService from "../services/CommentService";
-import StarRatings from 'react-star-ratings';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import ImgRender from "../componants/ImgRender";
+
+import CommentNotepart from "../componants/CommentNotePart";
 
 const CommentNote = ({match}) =>{
     const [school,setSchool] = useState([]);
@@ -13,10 +13,12 @@ const CommentNote = ({match}) =>{
 
     const [categorys,setCategorys] = useState([]);
     const [categoryChoosen,setCategoryChoosen] = useState([]);
+    const [categoryMoy,setCategoryMoy] = useState(0);
     const [firstClick,setFirstClick] = useState(false);
 
     const[comments,setComments] = useState([]);
     const [loadingComments,setLoadingComments ] = useState(true);
+
     useEffect(() => {
             SchoolService.findOneById(match.params.id)
                 .then(response =>{
@@ -36,6 +38,17 @@ const CommentNote = ({match}) =>{
         },[]
     );
 
+    const calcMoy = (commentsVal) =>{
+        let rating = 0;
+        let count = 0;
+        commentsVal.map(comment =>{
+            rating += comment.note;
+            count ++;
+        })
+        console.log(rating)
+        console.log(count)
+        return (rating/count).toFixed(1);
+    }
     const handleCommentsAndNotes = (school,categoryVal) =>{
         setLoadingComments(true);
         if(!firstClick)setFirstClick(true);
@@ -44,6 +57,7 @@ const CommentNote = ({match}) =>{
         CommentService.findBySchoolAndCategory(school,categoryVal.id)
             .then(response =>{
                 setComments(response.data["hydra:member"]);
+                setCategoryMoy(calcMoy(response.data["hydra:member"]));
                 setLoadingComments(false);
             })
             .catch(err => {
@@ -66,8 +80,7 @@ const CommentNote = ({match}) =>{
                 ||
                 <div className="card pmd-card" >
                     <div className="pmd-card-media">
-                        <img src="http://propeller.in/assets/images/profile-pic.png" width="400" height="200"
-                             className="img-fluid"/>
+                        <ImgRender picture={school.picture} size={25} />
                     </div>
                     <div className="card-body">
                         <h2 className="card-title">{school.name}</h2>
@@ -90,53 +103,8 @@ const CommentNote = ({match}) =>{
                         {
                             firstClick
                             &&
-                                <div className="card card-body mt-5">
-                                    <h4 className="text-center bg-primary p-2 text-light">{categoryChoosen.name}</h4>
-                                    <small className="form-text text-muted lead"> <FontAwesomeIcon icon={faInfoCircle}/> {categoryChoosen.info}</small>
-                                    <hr/>
-                                    {
-                                        loadingComments
-                                        &&
-                                        <div className='sweet-loading text-center'>
-                                            <ClipLoader
-                                                sizeUnit={"px"}
-                                                size={100}
-                                                color={'#ff1744'}
-                                            />
-                                        </div>
-                                        ||
-                                        comments.length
-                                        &&
-                                        comments.map(comment => (
-                                            <div key={comment.id} className="mb-2">
-                                                {
-                                                    comment.categorys.id === categoryChoosen.id
-                                                    &&
-                                                    <div className="media">
-                                                        <img src="http://placehold.it/64x64" className="mr-3 mt-4 rounded rounded-circle" alt="..." />
-                                                        <div className="media-body">
-                                                            <h5 className="">
-                                                                {comment.users.firstName} {comment.users.lastName}
-                                                            </h5>
-                                                            <StarRatings
-                                                                rating={comment.note}
-                                                                starDimension="20px"
-                                                                starSpacing="10px"
-                                                                starRatedColor="#ff1744"
-                                                            />
-                                                            <br/>
-                                                            {comment.comment}
-                                                        </div>
-                                                    </div>
-                                                }
-                                            </div>
-                                        ))
-                                        ||
-                                        <p> Aucun Commentaire pour cette section </p>
-                                    }
-                                </div>
+                                <CommentNotepart category={categoryChoosen} comments={comments} loadingComments={loadingComments} categoryMoy={categoryMoy}/>
                         }
-
                     </div>
                 </div>
             }

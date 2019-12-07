@@ -4,20 +4,10 @@
     <list default="true" id="7d4324e1-3564-44b6-8327-c116fa5fcd2a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/pages/CommentNote.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/CommentNote.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/pages/School/indexSchool.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/School/indexSchool.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/School.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/School.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/UserCommentSchool.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserCommentSchool.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/UserNoteSchool.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191121093526.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191121095801.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191121102449.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191121103939.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191121111128.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191121115817.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserNoteSchoolRepository.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,7 +247,7 @@
       <workItem from="1575725513122" duration="851000" />
       <workItem from="1575726872017" duration="87000" />
       <workItem from="1575726971299" duration="374000" />
-      <workItem from="1575727357553" duration="3666000" />
+      <workItem from="1575727357553" duration="12183000" />
     </task>
     <servers />
   </component>
@@ -290,6 +280,10 @@
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
     <state x="555" y="181" width="800" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1041@0.0.1920.1041" timestamp="1575208384070" />
+    <state x="684" y="312" width="542" height="413" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1575738718434">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state x="684" y="312" width="542" height="413" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1041@0.0.1920.1041" timestamp="1575738718434" />
     <state width="220" height="539" key="HiddenNamespacesPopup" timestamp="1575146752140">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
@@ -314,10 +308,10 @@
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
     <state x="636" y="105" width="648" height="828" key="find.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1575125669076" />
-    <state x="624" y="237" key="run.anything.popup" timestamp="1575728535058">
+    <state x="624" y="237" key="run.anything.popup" timestamp="1575737490954">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
-    <state x="624" y="237" key="run.anything.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1575728535058" />
+    <state x="624" y="237" key="run.anything.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1575737490954" />
     <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1575730826755">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>

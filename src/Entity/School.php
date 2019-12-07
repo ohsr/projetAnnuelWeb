@@ -142,6 +142,12 @@ class School
      */
     private $globalNote;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"schoolView"})
+     */
+    private $picture;
+
     public function __construct()
     {
         $this->commentsUser = new ArrayCollection();
@@ -396,6 +402,18 @@ class School
     public function setGlobalNote(?int $globalNote): self
     {
         $this->globalNote = $globalNote;
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(?string $picture): self
+    {
+        $this->picture = $picture;
 
         return $this;
     }

@@ -48,7 +48,6 @@ const IndexSchool = () =>{
                     <th><FontAwesomeIcon icon={ faTag} /><br/> Sigle</th>
                     <th><FontAwesomeIcon icon={ faSchool} /><br/> Status</th>
                     <th><FontAwesomeIcon icon={ faRoad} /><br/> Adresse</th>
-                    <th><FontAwesomeIcon icon={ faDivide} /><br/> Notes</th>
                     <th><FontAwesomeIcon icon={ faComment} /><br/> Commentaires</th>
                     <th colSpan={2}>
                         <NavLink className="btn btn-block btn-success btn-sm" to="/schools/new">Ajouter une Ecole</NavLink>
@@ -63,7 +62,6 @@ const IndexSchool = () =>{
                         <td>{school.sigle}</td>
                         <td>{school.status}</td>
                         <td>{school.adress}</td>
-                        <td>{school.notesUser.length}</td>
                         <td>{school.commentsUser.length}</td>
                         <td>
                             <NavLink className="btn btn-warning btn-sm" to={"/schools/"+school.id}> Modifier</NavLink>

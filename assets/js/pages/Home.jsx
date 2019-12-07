@@ -5,14 +5,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar,faComment} from '@fortawesome/free-solid-svg-icons';
 import ClipLoader from 'react-spinners/ClipLoader';
 import {NavLink} from "react-router-dom";
+import ImgRender from "../componants/ImgRender";
 
 const Home = () =>{
     const [schools,setSchools] = useState([]);
     const [loading,setLoading ] = useState(true);
     const [totalItems, setTotalItems] = useState(0);
-
     const [currentPage, setCurrentPage] = useState(1);
     const [schoolStatus, setSchoolStatus] = useState("Ecole Publique");
+
 
     const itemsPerPage = 9;
 
@@ -41,8 +42,10 @@ const Home = () =>{
     }
     return(
         <>
+
             <h1>Projet Annuel - NoteMySchool 🏫 </h1>
             <div className="container">
+
                 <div className="row justify-content-md-center">
                     <div className="col-lg-2">
                         <button onClick={() => handleStatus("Ecole Publique")} className="btn btn-sm btn-block btn-outline-primary border border-primary">
@@ -68,14 +71,16 @@ const Home = () =>{
                     </div>
                 ||
                 <div>
+
                 <div className="row mt-3">
                     {schools.map(school =>(
 
                             <div className="col-md-4 mt-2 d-flex align-items-stretch" key={school.id}>
-                                <div className="card pmd-card" >
+
+                                <div className="card pmd-card d-block d-flex " >
                                     <div className="pmd-card-media">
-                                        <img src="http://propeller.in/assets/images/profile-pic.png" width="1184" height="666"
-                                             className="img-fluid"/>
+                                        <ImgRender picture={school.picture} size={12} />
+
                                     </div>
                                     <div className="card-body">
                                         <h2 className="card-title">{school.name}</h2>
@@ -84,7 +89,7 @@ const Home = () =>{
                                             and views. Don't overload cards with extraneous information or actions.</p>
                                     </div>
                                     <div className="card-footer">
-                                        <NavLink to={"/comment_note/"+school.id} className="m-1 btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary">
+                                        <NavLink to={"/comment_note/"+school.id} className="align-self-end m-1 btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary">
                                             <FontAwesomeIcon icon={faStar} /> Noter & Commenter <FontAwesomeIcon icon={faComment} />
                                         </NavLink>
                                     </div>

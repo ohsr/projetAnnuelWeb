@@ -67,30 +67,25 @@ class AppFixtures extends Fixture
             $school->setAdress($faker->address);
             $school->setPostalCode($faker->postcode);
             $school->setDepartment($faker->departmentName);
+            $randPicture = rand(1,4);
+            switch ($randPicture){
+                case (1):
+                    $school->setPicture('first.jpg');
+                    break;
+                case (2):
+                    $school->setPicture('second.jpg');
+                    break;
+                case (3):
+                    $school->setPicture('third.jpg');
+                    break;
+                case (4):
+                    $school->setPicture('fourth.jpg');
+                    break;
+            }
             $manager->persist($school);
         }
         $manager->flush();
 
-        /*for($h=0; $h<=5; $h++){
-            $userNoteSchool = new UserNoteSchool();
-            $userCommentSchool = new UserCommentSchool();
-            $userFound = $this->getRandom(User::class,$manager);
-            $schoolFound = $this->getRandom(School::class,$manager);
-            $categoryFound = $this->getRandom(Category::class,$manager);
-
-            $userNoteSchool->setUsers($userFound);
-            $userNoteSchool->setSchools($schoolFound);
-            $userNoteSchool->setCategorys($categoryFound);
-            $userNoteSchool->setNote($faker->numberBetween(0,5));
-            $manager->persist($userNoteSchool);
-            $userCommentSchool->setUsers($userFound);
-            $userCommentSchool->setSchools($schoolFound);
-            $userCommentSchool->setCategorys($categoryFound);
-            $userCommentSchool->setComment($faker->realText(200));
-
-            $userNoteSchool->setCreatedAt(new \DateTime("now"));
-            $manager->persist($userCommentSchool);
-        }*/
         $schools = $manager->getRepository(School::class)->findAll();
         $categorys = $manager->getRepository(Category::class)->findAll();
         foreach ($schools as $school){
