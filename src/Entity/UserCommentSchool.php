@@ -46,10 +46,21 @@ class UserCommentSchool
     private $categorys;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      * @Groups({"commentView","userView"})
      */
     private $comment;
+
+    /**
+     * @ORM\Column(type="integer")
+     * @Groups({"commentView"})
+     */
+    private $note;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
 
     public function getId(): ?int
     {
@@ -100,6 +111,30 @@ class UserCommentSchool
     public function setComment(string $comment): self
     {
         $this->comment = $comment;
+
+        return $this;
+    }
+
+    public function getNote(): ?int
+    {
+        return $this->note;
+    }
+
+    public function setNote(int $note): self
+    {
+        $this->note = $note;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }

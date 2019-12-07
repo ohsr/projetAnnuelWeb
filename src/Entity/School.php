@@ -131,22 +131,19 @@ class School
     private $createdAt;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\UserNoteSchool", mappedBy="schools", orphanRemoval=true)
-     * @ApiSubresource()
-     * @Groups({"schoolView"})
-     */
-    private $notesUser;
-
-    /**
      * @ORM\OneToMany(targetEntity="App\Entity\UserCommentSchool", mappedBy="schools", orphanRemoval=true)
      * @ApiSubresource()
      * @Groups({"schoolView"})
      */
     private $commentsUser;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $globalNote;
+
     public function __construct()
     {
-        $this->notesUser = new ArrayCollection();
         $this->commentsUser = new ArrayCollection();
     }
 
@@ -361,37 +358,6 @@ class School
     }
 
     /**
-     * @return Collection|UserNoteSchool[]
-     */
-    public function getNotesUser(): Collection
-    {
-        return $this->notesUser;
-    }
-
-    public function addNotesUser(UserNoteSchool $notesUser): self
-    {
-        if (!$this->notesUser->contains($notesUser)) {
-            $this->notesUser[] = $notesUser;
-            $notesUser->setSchools($this);
-        }
-
-        return $this;
-    }
-
-    public function removeNotesUser(UserNoteSchool $notesUser): self
-    {
-        if ($this->notesUser->contains($notesUser)) {
-            $this->notesUser->removeElement($notesUser);
-            // set the owning side to null (unless already changed)
-            if ($notesUser->getSchools() === $this) {
-                $notesUser->setSchools(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
      * @return Collection|UserCommentSchool[]
      */
     public function getCommentsUser(): Collection
@@ -418,6 +384,18 @@ class School
                 $commentsUser->setSchools(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getGlobalNote(): ?int
+    {
+        return $this->globalNote;
+    }
+
+    public function setGlobalNote(?int $globalNote): self
+    {
+        $this->globalNote = $globalNote;
 
         return $this;
     }

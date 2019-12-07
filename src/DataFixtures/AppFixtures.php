@@ -6,7 +6,6 @@ use App\Entity\Category;
 use App\Entity\School;
 use App\Entity\User;
 use App\Entity\UserCommentSchool;
-use App\Entity\UserNoteSchool;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Faker;
@@ -20,9 +19,11 @@ class AppFixtures extends Fixture
         $this->encoder = $encoder;
     }
 
-    public function staticCategory($name,$manager){
+    public function staticCategory($name,$coefficient,$info,$manager){
         $category = new Category();
         $category->setName($name);
+        $category->setCoefficient($coefficient);
+        $category->setInfo($info);
         $manager->persist($category);
         return $category;
     }
@@ -37,14 +38,14 @@ class AppFixtures extends Fixture
         $faker->addProvider(new Faker\Provider\fr_FR\Address($faker));
         $faker->addProvider(new Faker\Provider\en_US\Payment($faker));
 
-        $this->staticCategory("Enseignement", $manager);
-        $this->staticCategory("Batiment(s)", $manager);
-        $this->staticCategory("Matériel", $manager);
-        $this->staticCategory("Situation", $manager);
-        $this->staticCategory("Ambiance", $manager);
-        $this->staticCategory("Coûts", $manager);
+        $this->staticCategory("Enseignement",3,"Qualité de l'enseignement (Pédagogie, Compétences, Capacité à transmettre leurs connaissances),", $manager);
+        $this->staticCategory("Batiment(s)",2,"Qualité des infrastructures liée au lieu d'enseignement (Classes,Amphithéâtre,Couloirs,Lieux Sociaux,Cantines etc...), ", $manager);
+        $this->staticCategory("Matériel",2,"Qualité du matériel mis à disposition par l'établissement (Informatique,Mobiliers,Distributeurs)", $manager);
+        $this->staticCategory("Situation",2,"Qualité de la situtation géographique de l'établissement (Centre Ville, Proche des transports en communs, Restauration à proximité etc...)", $manager);
+        $this->staticCategory("Ambiance", 1,"Ambiance au sein de l'établissement (Bonne entente,bienveillance,solidarité,évenements sociaux,fêtes)",$manager);
+        $this->staticCategory("Coûts",2,"Coûts de l'établissement (uniquement pour les écoles privées hors contract)",$manager);
 
-        for($i=0;$i<=10;$i++){
+        for($i=0;$i<=20;$i++){
             $user = new User();
             $user->setEmail($faker->email);
             $user->setPassword($this->encoder->encodePassword($user,"Password"));
@@ -70,7 +71,7 @@ class AppFixtures extends Fixture
         }
         $manager->flush();
 
-        for($h=0; $h<=5; $h++){
+        /*for($h=0; $h<=5; $h++){
             $userNoteSchool = new UserNoteSchool();
             $userCommentSchool = new UserCommentSchool();
             $userFound = $this->getRandom(User::class,$manager);
@@ -89,7 +90,26 @@ class AppFixtures extends Fixture
 
             $userNoteSchool->setCreatedAt(new \DateTime("now"));
             $manager->persist($userCommentSchool);
+        }*/
+        $schools = $manager->getRepository(School::class)->findAll();
+        $categorys = $manager->getRepository(Category::class)->findAll();
+        foreach ($schools as $school){
+            foreach ($categorys as $category){
+                $rand = rand(1,5);
+                for($h=0;$h<=$rand; $h++){
+                    $userCommentSchool = new UserCommentSchool();
+                    $userFound = $this->getRandom(User::class,$manager);
+                    $userCommentSchool->setUsers($userFound);
+                    $userCommentSchool->setCategorys($category);
+                    $userCommentSchool->setSchools($school);
+                    $userCommentSchool->setComment($faker->realText(200));
+                    $userCommentSchool->setNote($faker->numberBetween(0,5));
+                    $userCommentSchool->setCreatedAt(new \DateTime("now"));
+                    $manager->persist($userCommentSchool);
+                }
+            }
         }
+
         $manager->flush();
     }
 }

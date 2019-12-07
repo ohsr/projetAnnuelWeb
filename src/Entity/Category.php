@@ -29,18 +29,24 @@ class Category
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\UserNoteSchool", mappedBy="categorys", orphanRemoval=true)
-     */
-    private $notes;
-
-    /**
      * @ORM\OneToMany(targetEntity="App\Entity\UserCommentSchool", mappedBy="categorys", orphanRemoval=true)
      */
     private $comments;
 
+    /**
+     * @ORM\Column(type="text")
+     * @Groups({"categoryView"})
+     */
+    private $info;
+
+    /**
+     * @ORM\Column(type="integer")
+     * @Groups({"categoryView"})
+     */
+    private $coefficient;
+
     public function __construct()
     {
-        $this->notes = new ArrayCollection();
         $this->comments = new ArrayCollection();
     }
 
@@ -58,37 +64,6 @@ class Category
     public function setName(string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|UserNoteSchool[]
-     */
-    public function getNotes(): Collection
-    {
-        return $this->notes;
-    }
-
-    public function addNote(UserNoteSchool $note): self
-    {
-        if (!$this->notes->contains($note)) {
-            $this->notes[] = $note;
-            $note->setCategorys($this);
-        }
-
-        return $this;
-    }
-
-    public function removeNote(UserNoteSchool $note): self
-    {
-        if ($this->notes->contains($note)) {
-            $this->notes->removeElement($note);
-            // set the owning side to null (unless already changed)
-            if ($note->getCategorys() === $this) {
-                $note->setCategorys(null);
-            }
-        }
 
         return $this;
     }
@@ -120,6 +95,30 @@ class Category
                 $comment->setCategorys(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getInfo(): ?string
+    {
+        return $this->info;
+    }
+
+    public function setInfo(string $info): self
+    {
+        $this->info = $info;
+
+        return $this;
+    }
+
+    public function getCoefficient(): ?int
+    {
+        return $this->coefficient;
+    }
+
+    public function setCoefficient(int $coefficient): self
+    {
+        $this->coefficient = $coefficient;
 
         return $this;
     }

@@ -43,11 +43,6 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\UserNoteSchool", mappedBy="users", orphanRemoval=true)
-     */
-    private $notesSchool;
-
-    /**
      * @ORM\OneToMany(targetEntity="App\Entity\UserCommentSchool", mappedBy="users", orphanRemoval=true)
      */
     private $commentsSchool;
@@ -67,7 +62,6 @@ class User implements UserInterface
 
     public function __construct()
     {
-        $this->notesSchool = new ArrayCollection();
         $this->commentsSchool = new ArrayCollection();
     }
 
@@ -147,37 +141,6 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
-    }
-
-    /**
-     * @return Collection|UserNoteSchool[]
-     */
-    public function getNotes(): Collection
-    {
-        return $this->notesSchool;
-    }
-
-    public function addNote(UserNoteSchool $noteSchool): self
-    {
-        if (!$this->notesSchool->contains($noteSchool)) {
-            $this->notesSchool[] = $noteSchool;
-            $noteSchool->setUsers($this);
-        }
-
-        return $this;
-    }
-
-    public function removeNote(UserNoteSchool $noteSchool): self
-    {
-        if ($this->notesSchool->contains($noteSchool)) {
-            $this->notesSchool->removeElement($noteSchool);
-            // set the owning side to null (unless already changed)
-            if ($noteSchool->getUsers() === $this) {
-                $noteSchool->setUsers(null);
-            }
-        }
-
-        return $this;
     }
 
     /**

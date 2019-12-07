@@ -3,11 +3,18 @@ import ClipLoader from 'react-spinners/ClipLoader';
 import SchoolService from "../services/SchoolService";
 import CategoryService from "../services/CategoryService";
 import CommentService from "../services/CommentService";
+import StarRatings from 'react-star-ratings';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 const CommentNote = ({match}) =>{
     const [school,setSchool] = useState([]);
     const [loading,setLoading ] = useState(true);
+
     const [categorys,setCategorys] = useState([]);
+    const [categoryChoosen,setCategoryChoosen] = useState([]);
+    const [firstClick,setFirstClick] = useState(false);
+
     const[comments,setComments] = useState([]);
     const [loadingComments,setLoadingComments ] = useState(true);
     useEffect(() => {
@@ -22,13 +29,19 @@ const CommentNote = ({match}) =>{
                             setLoading(false);
                         })
                 })
-                .catch(err => console.log("Erreur lors de la sélection"))
+                .catch(err => {
+                    setLoading(false)
+                    console.log("Erreur lors de la sélection")
+                })
         },[]
     );
 
-    const handleCommentsAndNotes = (school,category) =>{
+    const handleCommentsAndNotes = (school,categoryVal) =>{
         setLoadingComments(true);
-        CommentService.findBySchoolAndCategory(school,category)
+        if(!firstClick)setFirstClick(true);
+
+        setCategoryChoosen(categoryVal);
+        CommentService.findBySchoolAndCategory(school,categoryVal.id)
             .then(response =>{
                 setComments(response.data["hydra:member"]);
                 setLoadingComments(false);
@@ -66,53 +79,63 @@ const CommentNote = ({match}) =>{
                             <div className="row">
                                 {categorys.map(category =>(
                                     <div className="col" key={category.id}>
-                                        <button href={"#collapse"+category.id} onClick={ () => handleCommentsAndNotes(school.id,category.id)} className="btn btn-outline-primary  border border-primary btn-block btn-sm" data-toggle="collapse"  role="button"
+                                        <button onClick={ () => handleCommentsAndNotes(school.id,category)} className="btn btn-outline-primary  border border-primary btn-block btn-sm" data-toggle="collapse"  role="button"
                                                 aria-expanded="false" aria-controls={category.id}>
                                             {category.name}
                                         </button>
                                     </div>
 
                                 ))}
-
                             </div>
-                        {categorys.map(category =>(
-                            <div className="collapse" id={"collapse"+category.id} key={"collapse"+category.id}>
-                                <div className="card card-body">
+                        {
+                            firstClick
+                            &&
+                                <div className="card card-body mt-5">
+                                    <h4 className="text-center bg-primary p-2 text-light">{categoryChoosen.name}</h4>
+                                    <small className="form-text text-muted lead"> <FontAwesomeIcon icon={faInfoCircle}/> {categoryChoosen.info}</small>
+                                    <hr/>
                                     {
                                         loadingComments
                                         &&
-                                            <div className='sweet-loading text-center'>
-                                                <ClipLoader
-                                                    sizeUnit={"px"}
-                                                    size={100}
-                                                    color={'#ff1744'}
-                                                />
-                                            </div>
+                                        <div className='sweet-loading text-center'>
+                                            <ClipLoader
+                                                sizeUnit={"px"}
+                                                size={100}
+                                                color={'#ff1744'}
+                                            />
+                                        </div>
                                         ||
-                                            comments.length
-                                            &&
-                                                comments.map(comment => (
-                                                    <div key={comment.id}>
-                                                        {
-                                                            comment.categorys.id === category.id
-                                                            &&
-                                                            <div className="media">
-                                                                <img src="http://placehold.it/64x64" className="mr-3" alt="..." />
-                                                                    <div className="media-body">
-                                                                        <h5 className="mt-0">{comment.users.firstName} {comment.users.lastName}</h5>
-                                                                        {comment.comment}
-                                                                    </div>
-                                                            </div>
-                                                        }
+                                        comments.length
+                                        &&
+                                        comments.map(comment => (
+                                            <div key={comment.id} className="mb-2">
+                                                {
+                                                    comment.categorys.id === categoryChoosen.id
+                                                    &&
+                                                    <div className="media">
+                                                        <img src="http://placehold.it/64x64" className="mr-3 mt-4 rounded rounded-circle" alt="..." />
+                                                        <div className="media-body">
+                                                            <h5 className="">
+                                                                {comment.users.firstName} {comment.users.lastName}
+                                                            </h5>
+                                                            <StarRatings
+                                                                rating={comment.note}
+                                                                starDimension="20px"
+                                                                starSpacing="10px"
+                                                                starRatedColor="#ff1744"
+                                                            />
+                                                            <br/>
+                                                            {comment.comment}
+                                                        </div>
                                                     </div>
-                                                ))
-                                            ||
-                                            <p> Aucun Commentaire pour cette section </p>
+                                                }
+                                            </div>
+                                        ))
+                                        ||
+                                        <p> Aucun Commentaire pour cette section </p>
                                     }
                                 </div>
-                            </div>
-                        ))}
-
+                        }
 
                     </div>
                 </div>

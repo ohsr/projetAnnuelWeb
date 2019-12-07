@@ -4,11 +4,20 @@
     <list default="true" id="7d4324e1-3564-44b6-8327-c116fa5fcd2a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/pages/CommentNote.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/CommentNote.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/services/SchoolService.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/services/SchoolService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/School.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/School.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/UserCommentSchool.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserCommentSchool.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/UserNoteSchool.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserNoteSchool.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/UserNoteSchool.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191121093526.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191121095801.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191121102449.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191121103939.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191121111128.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191121115817.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserNoteSchoolRepository.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,9 +192,9 @@
     <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/js/pages/Category" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
@@ -201,7 +210,12 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:@projetAnnuel" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -238,6 +252,12 @@
       <workItem from="1575275893310" duration="2879000" />
       <workItem from="1575409601884" duration="6461000" />
       <workItem from="1575488371790" duration="7885000" />
+      <workItem from="1575662061572" duration="5301000" />
+      <workItem from="1575669702522" duration="952000" />
+      <workItem from="1575725513122" duration="851000" />
+      <workItem from="1575726872017" duration="87000" />
+      <workItem from="1575726971299" duration="374000" />
+      <workItem from="1575727357553" duration="3666000" />
     </task>
     <servers />
   </component>
@@ -258,6 +278,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="555" y="181" width="800" height="675" key="#Inspections" timestamp="1575727447645">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state x="555" y="181" width="800" height="675" key="#Inspections/0.0.1920.1041@0.0.1920.1041" timestamp="1575727447645" />
     <state x="555" y="181" width="800" height="675" key="#Scopes" timestamp="1575136453256">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
@@ -270,21 +294,33 @@
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
     <state width="220" height="539" key="HiddenNamespacesPopup/0.0.1920.1041@0.0.1920.1041" timestamp="1575146752140" />
-    <state x="874" y="274" key="SettingsEditor" timestamp="1575147271348">
+    <state x="621" y="319" width="667" height="398" key="NewPhpClassDialog" timestamp="1575727381001">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
-    <state x="874" y="274" key="SettingsEditor/0.0.1920.1041@0.0.1920.1041" timestamp="1575147271348" />
+    <state x="621" y="319" width="667" height="398" key="NewPhpClassDialog/0.0.1920.1041@0.0.1920.1041" timestamp="1575727381001" />
+    <state x="169" y="229" key="SettingsEditor" timestamp="1575727344822">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state x="169" y="229" key="SettingsEditor/0.0.1920.1041@0.0.1920.1041" timestamp="1575727344822" />
+    <state width="541" height="446" key="SwitcherDM" timestamp="1575669887085">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state width="541" height="446" key="SwitcherDM/0.0.1920.1041@0.0.1920.1041" timestamp="1575669887085" />
+    <state x="817" y="409" width="317" height="256" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1575729142115">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state x="817" y="409" width="317" height="256" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1041@0.0.1920.1041" timestamp="1575729142115" />
     <state x="636" y="105" width="648" height="828" key="find.popup" timestamp="1575125669076">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
     <state x="636" y="105" width="648" height="828" key="find.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1575125669076" />
-    <state x="624" y="237" key="run.anything.popup" timestamp="1575490861731">
+    <state x="624" y="237" key="run.anything.popup" timestamp="1575728535058">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
-    <state x="624" y="237" key="run.anything.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1575490861731" />
-    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1575490999586">
+    <state x="624" y="237" key="run.anything.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1575728535058" />
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1575730826755">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
-    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1575490999586" />
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1575730826755" />
   </component>
 </project>
