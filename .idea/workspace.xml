@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d4324e1-3564-44b6-8327-c116fa5fcd2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AppController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/School.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/School.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/UserCommentSchool.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserCommentSchool.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +44,14 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="@projetAnnuel" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="projetAnnuel: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="projetAnnuel: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@projetAnnuel" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="projetAnnuel: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="category: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -193,15 +201,30 @@
       <recent name="$PROJECT_DIR$/assets/js/pages" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:@projetAnnuel" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:@projetAnnuel" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@5868d780" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:@projetAnnuel" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@27b3118d" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -242,6 +265,7 @@
       <workItem from="1575726971299" duration="374000" />
       <workItem from="1575727357553" duration="12183000" />
       <workItem from="1575745436168" duration="2313000" />
+      <workItem from="1575819611915" duration="11476000" />
     </task>
     <servers />
   </component>
@@ -278,6 +302,14 @@
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
     <state x="684" y="312" width="542" height="413" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1041@0.0.1920.1041" timestamp="1575738718434" />
+    <state x="625" y="0" width="650" height="1039" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1575821849382">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state x="625" y="0" width="650" height="1039" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1041@0.0.1920.1041" timestamp="1575821849382" />
+    <state x="693" y="277" width="524" height="482" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1575830394748">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state x="693" y="277" width="524" height="482" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1041@0.0.1920.1041" timestamp="1575830394748" />
     <state width="220" height="539" key="HiddenNamespacesPopup" timestamp="1575146752140">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
@@ -302,10 +334,10 @@
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
     <state x="636" y="105" width="648" height="828" key="find.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1575125669076" />
-    <state x="624" y="237" key="run.anything.popup" timestamp="1575737490954">
+    <state x="624" y="237" key="run.anything.popup" timestamp="1575830896900">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
-    <state x="624" y="237" key="run.anything.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1575737490954" />
+    <state x="624" y="237" key="run.anything.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1575830896900" />
     <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1575730826755">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>

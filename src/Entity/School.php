@@ -138,7 +138,7 @@ class School
     private $commentsUser;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="float", nullable=true)
      */
     private $globalNote;
 
@@ -394,12 +394,12 @@ class School
         return $this;
     }
 
-    public function getGlobalNote(): ?int
+    public function getGlobalNote(): ?float
     {
         return $this->globalNote;
     }
 
-    public function setGlobalNote(?int $globalNote): self
+    public function setGlobalNote(?float $globalNote): self
     {
         $this->globalNote = $globalNote;
 

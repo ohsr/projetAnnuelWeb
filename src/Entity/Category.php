@@ -41,7 +41,7 @@ class Category
 
     /**
      * @ORM\Column(type="integer")
-     * @Groups({"categoryView"})
+     * @Groups({"categoryView","commentView"})
      */
     private $coefficient;
 

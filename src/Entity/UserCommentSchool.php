@@ -11,7 +11,8 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserCommentSchoolRepository")
  * @ApiResource(
- *      normalizationContext={"groups"={"commentView"}}
+ *      normalizationContext={"groups"={"commentView"}},
+ *      attributes={"pagination_enabled"=false}
  * )
  * @ApiFilter(SearchFilter::class, properties={"schools": "exact","categorys": "exact"})
  */
