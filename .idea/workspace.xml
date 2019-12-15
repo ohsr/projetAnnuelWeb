@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d4324e1-3564-44b6-8327-c116fa5fcd2a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AppController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/School.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/School.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/UserCommentSchool.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserCommentSchool.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,12 +219,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:@projetAnnuel" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@5868d780" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:@projetAnnuel" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@27b3118d" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@1553891f" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -266,6 +266,8 @@
       <workItem from="1575727357553" duration="12183000" />
       <workItem from="1575745436168" duration="2313000" />
       <workItem from="1575819611915" duration="11476000" />
+      <workItem from="1576269963552" duration="11000" />
+      <workItem from="1576426229307" duration="4513000" />
     </task>
     <servers />
   </component>
@@ -310,6 +312,22 @@
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
     <state x="693" y="277" width="524" height="482" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1041@0.0.1920.1041" timestamp="1575830394748" />
+    <state width="1291" height="77" key="GridCell.Tab.0.bottom" timestamp="1576426288429">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state width="1291" height="77" key="GridCell.Tab.0.bottom/0.0.1920.1041@0.0.1920.1041" timestamp="1576426288429" />
+    <state width="1291" height="77" key="GridCell.Tab.0.center" timestamp="1576426288427">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state width="1291" height="77" key="GridCell.Tab.0.center/0.0.1920.1041@0.0.1920.1041" timestamp="1576426288427" />
+    <state width="1291" height="77" key="GridCell.Tab.0.left" timestamp="1576426288427">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state width="1291" height="77" key="GridCell.Tab.0.left/0.0.1920.1041@0.0.1920.1041" timestamp="1576426288427" />
+    <state width="1291" height="77" key="GridCell.Tab.0.right" timestamp="1576426288428">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state width="1291" height="77" key="GridCell.Tab.0.right/0.0.1920.1041@0.0.1920.1041" timestamp="1576426288428" />
     <state width="220" height="539" key="HiddenNamespacesPopup" timestamp="1575146752140">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
