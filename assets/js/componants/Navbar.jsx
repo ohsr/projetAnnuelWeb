@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from "react-dom";
 import {NavLink} from "react-router-dom";
 
-const Navbar = () =>{
+const Navbar = ({isAuthenticated,handleLogout}) =>{
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -26,6 +26,22 @@ const Navbar = () =>{
                         <li className="nav-item">
                             <a className="nav-link" href="#">Mon Profil</a>
                         </li>
+                    </ul>
+                    <ul className="navbar-nav ml-auto">
+                        {!isAuthenticated &&
+                        <>
+                            <li>
+                                <a href="#" className="nav-link">Inscription</a>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink to="/login" className="btn btn-success">Connexion</NavLink>
+                            </li>
+                        </>
+                        ||
+                        <li className="nav-item">
+                            <button onClick={handleLogout} className="btn btn-danger">Déconnexion</button>
+                        </li>
+                        }
                     </ul>
                 </div>
             </nav>
