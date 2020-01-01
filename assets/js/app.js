@@ -9,7 +9,7 @@ import IndexCategory from "./pages/Category/indexCategory";
 import NewSchool from "./pages/School/newSchool";
 import UpdateSchool from "./pages/School/updateSchool";
 import CommentNote from "./pages/CommentNote";
-
+import Login from "./pages/Login";
 
 require('../css/app.css');
 import $ from 'jquery';
@@ -28,6 +28,7 @@ function App(){
                         <Route path="/schools" component={() => <IndexSchool/>} />
                         <Route path="/users" component={() => <IndexUser/>} />
                         <Route path="/categorys" component={() => <IndexCategory/>} />
+                        <Route path="/login" component={() => <Login/>} />
                         <Route path="/" component={() => <Home/>} />
                     </Switch>
                 </div>

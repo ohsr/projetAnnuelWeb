@@ -27,6 +27,11 @@ const Navbar = () =>{
                             <a className="nav-link" href="#">Mon Profil</a>
                         </li>
                     </ul>
+                    <ul className="navbar-nav ml-auto">
+                        <li className="nav-item">
+                            <NavLink to="/login" className="btn btn-success">Connexion</NavLink>
+                        </li>
+                    </ul>
                 </div>
             </nav>
         </>
