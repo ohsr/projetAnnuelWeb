@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import ReactDOM from "react-dom";
 import {HashRouter,Route,Switch} from "react-router-dom";
 import Navbar from "./componants/Navbar";
@@ -17,9 +17,30 @@ import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min'
 
 function App(){
+    const [isAuthenticated,setIsAuthenticated] =useState(false);
+
+    useEffect(() => {
+        if(localStorage.getItem("isAuthenticated")){
+            setIsAuthenticated(true);
+        }
+    },[]);
+
+    const handleLogout = () =>{
+        SecurityService.logout()
+            .then(response =>{
+                window.location.reload();
+            })
+            .catch(err =>{
+                console.log("Erreur lors de la déconnexion")
+            })
+    }
+    const handleAuthenticated = ()=>{
+        setIsAuthenticated(!isAuthenticated);
+        localStorage.setItem("isAuthenticated",!isAuthenticated);
+    }
     return(
             <HashRouter>
-                <Navbar/>
+                <Navbar isAuthenticated={isAuthenticated} handleLogout={handleLogout}/>
                 <div className="container mt-5 text-center">
                     <Switch>
                         <Route path="/comment_note/:id" render = {props => <CommentNote {...props}/>} />
@@ -28,7 +49,7 @@ function App(){
                         <Route path="/schools" component={() => <IndexSchool/>} />
                         <Route path="/users" component={() => <IndexUser/>} />
                         <Route path="/categorys" component={() => <IndexCategory/>} />
-                        <Route path="/login" component={() => <Login/>} />
+                        <Route path="/login" component={() => <Login handleAuthenticated={setIsAuthenticated}/>} />
                         <Route path="/" component={() => <Home/>} />
                     </Switch>
                 </div>

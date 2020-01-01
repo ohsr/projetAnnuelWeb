@@ -4,7 +4,7 @@ import SecurityService from '../services/SecurityService';
 import {NavLink} from "react-router-dom";
 import Field from "../componants/Field";
 
-const Login = () =>{
+const Login = ({handleAuthenticated}) =>{
     const [credentials, setCredentials]= useState({
         username: "",
         password: ""
@@ -14,14 +14,13 @@ const Login = () =>{
     const handleSubmit =  event =>{
         event.preventDefault();
         SecurityService.login(credentials).then((response)=> {
-            console.log(response.headers)
             setError("");
-            //history.replace("/");
+            handleAuthenticated()
+            history.replace("/");
         })
-            .catch((err)=>{
-                console.log(err.response)
-                setError(err.response.data);
-            })
+        .catch((err)=>{
+            setError(err.response.data);
+        })
     };
     const handleChange = (event) =>{
         let name = event.currentTarget.name;
@@ -42,9 +41,7 @@ const Login = () =>{
                     }
                     <Field label="Adresse Email" name="username"
                            value={credentials.username} onChange={handleChange}
-                           placeholder="Votre adresse email"
-                           type="email"
-                    />
+                   />
                     <Field label="Mot de passe" name="password"
                            value={credentials.password} onChange={handleChange}
                            placeholder="Votre mot de passe"
@@ -59,4 +56,5 @@ const Login = () =>{
         </>
     )
 };
+
 export default Login;

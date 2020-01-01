@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d4324e1-3564-44b6-8327-c116fa5fcd2a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/js/services/SecurityService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Security/FailureHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/componants/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/componants/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/lexik_jwt_authentication.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/lexik_jwt_authentication.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
@@ -259,7 +262,7 @@
       <workItem from="1575819611915" duration="11476000" />
       <workItem from="1576269963552" duration="11000" />
       <workItem from="1576426229307" duration="4513000" />
-      <workItem from="1577801661692" duration="11138000" />
+      <workItem from="1577801661692" duration="13330000" />
     </task>
     <servers />
   </component>
@@ -328,10 +331,10 @@
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
     <state x="621" y="319" width="667" height="398" key="NewPhpClassDialog/0.0.1920.1041@0.0.1920.1041" timestamp="1575727381001" />
-    <state x="169" y="229" key="SettingsEditor" timestamp="1575727344822">
+    <state x="169" y="229" key="SettingsEditor" timestamp="1577840660225">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
-    <state x="169" y="229" key="SettingsEditor/0.0.1920.1041@0.0.1920.1041" timestamp="1575727344822" />
+    <state x="169" y="229" key="SettingsEditor/0.0.1920.1041@0.0.1920.1041" timestamp="1577840660225" />
     <state width="541" height="446" key="SwitcherDM" timestamp="1577838985370">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
@@ -344,6 +347,10 @@
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
     <state x="636" y="105" width="648" height="828" key="find.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1575125669076" />
+    <state x="688" y="301" width="543" height="435" key="git4idea.merge.GitMergeDialog" timestamp="1577840772197">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state x="688" y="301" width="543" height="435" key="git4idea.merge.GitMergeDialog/0.0.1920.1041@0.0.1920.1041" timestamp="1577840772197" />
     <state x="624" y="237" key="run.anything.popup" timestamp="1577839540742">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>

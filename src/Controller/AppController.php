@@ -11,19 +11,23 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class AppController extends AbstractController
 {
     /**
      * @Route("/", name="app")
      */
-    public function index()
+    public function index(SerializerInterface $serializer)
     {
-        return $this->render('app/index.html.twig');
+        return $this->render('app/index.html.twig',[
+            'user' => $serializer->serialize($this->getUser(),'jsonld')
+        ]);
     }
 
     /**
-     * @Route("/logout", name="api_logout")
+     * @Route("/api/logout", name="api_logout")
+     * @param Request $request
      * @return mixed
      */
     public function logout(Request $request)

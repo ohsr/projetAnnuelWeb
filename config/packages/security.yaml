@@ -28,10 +28,7 @@ security:
             guard:
                 authenticators:
                     - lexik_jwt_authentication.jwt_token_authenticator
-            methods: [POST,PUT,DELETE,PATCH,HEAD,OPTIONS,GET]
-        main:
-            anonymous: true
-
+            methods: [POST,PUT,DELETE,PATCH,HEAD,OPTIONS]
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
 
