@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d4324e1-3564-44b6-8327-c116fa5fcd2a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/services/SecurityService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Security/FailureHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/componants/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/componants/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/Home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/lexik_jwt_authentication.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/lexik_jwt_authentication.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/nelmio_cors.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/nelmio_cors.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AppController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +257,8 @@
       <workItem from="1575819611915" duration="11476000" />
       <workItem from="1576269963552" duration="11000" />
       <workItem from="1576426229307" duration="4513000" />
-      <workItem from="1577801661692" duration="13330000" />
+      <workItem from="1577801661692" duration="13435000" />
+      <workItem from="1577894311529" duration="7313000" />
     </task>
     <servers />
   </component>
@@ -307,6 +303,10 @@
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
     <state x="693" y="277" width="524" height="482" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1041@0.0.1920.1041" timestamp="1575830394748" />
+    <state x="557" y="30" width="795" height="976" key="CommitChangelistDialog2" timestamp="1577900447501">
+      <screen x="0" y="0" width="1920" height="1041" />
+    </state>
+    <state x="557" y="30" width="795" height="976" key="CommitChangelistDialog2/0.0.1920.1041@0.0.1920.1041" timestamp="1577900447501" />
     <state width="1291" height="77" key="GridCell.Tab.0.bottom" timestamp="1576426288429">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
@@ -343,10 +343,10 @@
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
     <state x="817" y="409" width="317" height="256" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1041@0.0.1920.1041" timestamp="1575729142115" />
-    <state x="636" y="105" width="648" height="828" key="find.popup" timestamp="1575125669076">
+    <state x="636" y="105" width="648" height="828" key="find.popup" timestamp="1577894466285">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
-    <state x="636" y="105" width="648" height="828" key="find.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1575125669076" />
+    <state x="636" y="105" width="648" height="828" key="find.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1577894466285" />
     <state x="688" y="301" width="543" height="435" key="git4idea.merge.GitMergeDialog" timestamp="1577840772197">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>

@@ -6,8 +6,10 @@ import { faStar,faComment} from '@fortawesome/free-solid-svg-icons';
 import ClipLoader from 'react-spinners/ClipLoader';
 import {NavLink} from "react-router-dom";
 import ImgRender from "../componants/ImgRender";
+import { toast } from 'react-toastify';
 
-const Home = () =>{
+const Home = ({handleReject}) =>{
+    toast.configure();
     const [schools,setSchools] = useState([]);
     const [loading,setLoading ] = useState(true);
     const [totalItems, setTotalItems] = useState(0);
@@ -27,7 +29,13 @@ const Home = () =>{
                 setLoading(false);
             })
             .catch(err =>{
-                console.log(`Erreur ${err}`);
+                console.log(err.response)
+                console.log(err.response.data.message)
+                toast.error(handleReject(err.response.data.message),{
+                    position: toast.POSITION.BOTTOM_RIGHT,
+                    className: 'foo-bar'
+                });
+                setLoading(false)
             })
     }, [currentPage,schoolStatus]);
 

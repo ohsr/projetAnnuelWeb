@@ -3,23 +3,37 @@ import Pagination from '../componants/Pagination';
 import SecurityService from '../services/SecurityService';
 import {NavLink} from "react-router-dom";
 import Field from "../componants/Field";
+import { toast } from 'react-toastify'
 
-const Login = ({handleAuthenticated}) =>{
+
+const Login = ({history,isAuthenticated,handleAuthenticated,handleReject}) =>{
+    toast.configure();
     const [credentials, setCredentials]= useState({
         username: "",
         password: ""
     });
-    const [error,setError] = useState("");
 
+    useEffect(() => {
+       if(isAuthenticated){
+           localStorage.removeItem("isAuthenticated");
+           handleAuthenticated();
+       }
+    },[]);
     const handleSubmit =  event =>{
         event.preventDefault();
-        SecurityService.login(credentials).then((response)=> {
-            setError("");
+        SecurityService.login(credentials)
+        .then((response)=> {
             handleAuthenticated()
             history.replace("/");
+            toast.success("Connexion réusssie !");
         })
         .catch((err)=>{
-            setError(err.response.data);
+            let error ="";
+            toast.error(handleReject(err.response.data.message));
+            setCredentials({
+                username: credentials.username,
+                password: ""
+            })
         })
     };
     const handleChange = (event) =>{
@@ -32,14 +46,8 @@ const Login = ({handleAuthenticated}) =>{
             <div className="container">
                 <h1 className="text-center bg-primary p-2 text-light">Connectez-vous</h1>
                 <form onSubmit={handleSubmit}>
-                    {
-                        error
-                        &&
-                        <div className="alert alert-danger" role="alert">
-                            {error}
-                        </div>
-                    }
-                    <Field label="Adresse Email" name="username"
+
+                    <Field label="Adresse Email" name="username" type="email"
                            value={credentials.username} onChange={handleChange}
                    />
                     <Field label="Mot de passe" name="password"

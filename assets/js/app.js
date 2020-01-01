@@ -1,6 +1,9 @@
 import React,{useState,useEffect} from 'react';
 import ReactDOM from "react-dom";
 import {HashRouter,Route,Switch} from "react-router-dom";
+import SecurityService from "./services/SecurityService";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCross} from '@fortawesome/free-solid-svg-icons';
 import Navbar from "./componants/Navbar";
 import Home from "./pages/Home";
 import IndexSchool from "./pages/School/indexSchool";
@@ -12,6 +15,7 @@ import CommentNote from "./pages/CommentNote";
 import Login from "./pages/Login";
 
 require('../css/app.css');
+import 'react-toastify/dist/ReactToastify.css';
 import $ from 'jquery';
 import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min'
@@ -28,15 +32,48 @@ function App(){
     const handleLogout = () =>{
         SecurityService.logout()
             .then(response =>{
+                localStorage.removeItem("isAuthenticated")
                 window.location.reload();
             })
             .catch(err =>{
                 console.log("Erreur lors de la déconnexion")
             })
     }
+
+    const deleteFrontAuth = () =>{
+        if(localStorage.getItem("isAuthenticated")){
+            localStorage.removeItem("isAuthenticated")
+        }
+        if(isAuthenticated){
+            setIsAuthenticated(false);
+        }
+    }
+
     const handleAuthenticated = ()=>{
         setIsAuthenticated(!isAuthenticated);
-        localStorage.setItem("isAuthenticated",!isAuthenticated);
+        if(isAuthenticated){
+            localStorage.setItem("isAuthenticated",!isAuthenticated);
+        }else{
+            localStorage.removeItem("isAuthenticated");
+        }
+    }
+
+
+    const handleReject = (error) =>{
+        let errorResponse = "";
+        switch (error) {
+            case("JWT Token not found"):
+                errorResponse = "Vous devez être connecté pour accèder à cette ressource !";
+                deleteFrontAuth();
+                break;
+            case("Invalid credentials."):
+                errorResponse = `Adresse email ou mot de passe incorrect 🚫`;
+                break;
+            default:
+                errorResponse = "Une erreur est survenue";
+                break;
+        }
+        return errorResponse;
     }
     return(
             <HashRouter>
@@ -49,8 +86,8 @@ function App(){
                         <Route path="/schools" component={() => <IndexSchool/>} />
                         <Route path="/users" component={() => <IndexUser/>} />
                         <Route path="/categorys" component={() => <IndexCategory/>} />
-                        <Route path="/login" component={() => <Login handleAuthenticated={setIsAuthenticated}/>} />
-                        <Route path="/" component={() => <Home/>} />
+                        <Route path="/login" render={props => <Login {...props} isAuthenticated={isAuthenticated} handleAuthenticated={handleAuthenticated} handleReject={handleReject}/>} />
+                        <Route path="/" component={() => <Home handleReject={handleReject}/>} />
                     </Switch>
                 </div>
             </HashRouter>
