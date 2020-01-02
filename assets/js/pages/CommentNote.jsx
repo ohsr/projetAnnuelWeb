@@ -34,6 +34,7 @@ const CommentNote = ({match}) =>{
                 .catch(err => {
                     setLoading(false)
                     console.log("Erreur lors de la sélection")
+                    console.log(err.response)
                 })
         },[]
     );

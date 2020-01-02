@@ -8,14 +8,17 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\ViewEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Core\Security;
 
 class SchoolNoteSubscriber implements EventSubscriberInterface
 {
     private $manager;
-    public function __construct(EntityManagerInterface $manager)
+    private $security;
+    public function __construct(EntityManagerInterface $manager, Security $security)
     {
         $this->manager = $manager;
+        $this->security = $security;
     }
 
     public static function getSubscribedEvents()
@@ -29,9 +32,22 @@ class SchoolNoteSubscriber implements EventSubscriberInterface
     public function setNoteSchool(ViewEvent $event){
         $data = $event->getControllerResult();
         $request = $event->getRequest();
-        if($data instanceof UserCommentSchool && ($request->getMethod() == "POST" ||$request->getMethod() == "PUT") ){
-            $data->setCreatedAt(new \DateTime('now'));
-        }
 
+        if($data instanceof UserCommentSchool && $this->security->isGranted("IS_AUTHENTICATED_FULLY")){
+            switch ($request->getMethod() ){
+                case ("POST"):
+                    $data->setUsers($this->security->getUser());
+                    $data->setCreatedAt(new \DateTime());
+                    break;
+                case ("DELETE"):
+                case ("PUT"):
+                    if($this->security->getUser() != $data->getUsers() && !$this->security->isGranted("ROLE_ADMIN")){
+                        throw new AccessDeniedException();
+                    }
+                    break;
+                default:
+                    //throw new AccessDeniedException();
+            }
+        }
     }
 }
