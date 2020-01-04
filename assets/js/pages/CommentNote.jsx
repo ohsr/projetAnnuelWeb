@@ -7,7 +7,7 @@ import ImgRender from "../componants/ImgRender";
 
 import CommentNotepart from "../componants/CommentNotePart";
 
-const CommentNote = ({match}) =>{
+const CommentNote = ({match,isAuthenticated}) =>{
     const [school,setSchool] = useState([]);
     const [loading,setLoading ] = useState(true);
 
@@ -91,6 +91,7 @@ const CommentNote = ({match}) =>{
                     </div>
                     <div className="card-footer">
                             <div className="row">
+
                                 {categorys.map(category =>(
                                     <div className="col" key={category.id}>
                                         <button onClick={ () => handleCommentsAndNotes(school.id,category)} className="btn btn-outline-primary  border border-primary btn-block btn-sm" data-toggle="collapse"  role="button"
@@ -104,7 +105,7 @@ const CommentNote = ({match}) =>{
                         {
                             firstClick
                             &&
-                                <CommentNotepart category={categoryChoosen} comments={comments} loadingComments={loadingComments} categoryMoy={categoryMoy}/>
+                                <CommentNotepart isAuthenticated={isAuthenticated} category={categoryChoosen} comments={comments} loadingComments={loadingComments} categoryMoy={categoryMoy}/>
                         }
                     </div>
                 </div>

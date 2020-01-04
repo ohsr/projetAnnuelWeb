@@ -4,7 +4,7 @@ import StarRatings from 'react-star-ratings'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfoCircle,faStar,faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 
-const CommentNotePart = ({category,comments,loadingComments,categoryMoy}) =>{
+const CommentNotePart = ({isAuthenticated,category,comments,loadingComments,categoryMoy}) =>{
     return(
         <>
             <div className="card card-body mt-5">
@@ -18,6 +18,21 @@ const CommentNotePart = ({category,comments,loadingComments,categoryMoy}) =>{
                     </small>
                 }
                 <hr/>
+                { isAuthenticated
+                &&
+                <form className="border border-primary m-5">
+                    <h5 className="text-center bg-primary p-2 text-light">Noter & Commenter l'école pour son {category.name}</h5>
+                    <div className="form-group">
+                        <label htmlFor="note">Note</label>
+                        <input type="number" name="note" id="note" className="form-control"/>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="comment">Commentaire</label>
+                        <textarea name="comment" id="comment" className="form-control"></textarea>
+                    </div>
+                    <button type="submit" className="btn btn-success mb-2 ">Commenter</button>
+                </form>
+                }
                 {
                     loadingComments
                     &&
@@ -32,8 +47,10 @@ const CommentNotePart = ({category,comments,loadingComments,categoryMoy}) =>{
                     ||
                     comments.length
                     &&
+
                     comments.map(comment => (
                         <div key={comment.id} className="mb-2">
+
                             {
                                 comment.categorys.id === category.id
                                 &&

@@ -32,7 +32,7 @@ function App(){
     const handleLogout = () =>{
         SecurityService.logout()
             .then(response =>{
-                localStorage.removeItem("isAuthenticated")
+                deleteFrontAuth()
                 window.location.reload();
             })
             .catch(err =>{
@@ -41,20 +41,26 @@ function App(){
     }
 
     const deleteFrontAuth = () =>{
-        if(localStorage.getItem("isAuthenticated")){
-            localStorage.removeItem("isAuthenticated")
+        if(localStorage.getItem("isAuthenticated") || localStorage.getItem("userData") ){
+            localStorage.removeItem("isAuthenticated");
+            localStorage.removeItem("userData");
         }
         if(isAuthenticated){
             setIsAuthenticated(false);
         }
     }
 
-    const handleAuthenticated = ()=>{
+    const handleAuthenticated = (userData = null)=>{
         setIsAuthenticated(!isAuthenticated);
-        if(isAuthenticated){
+        console.log(userData)
+        if(isAuthenticated || userData){
+            console.log("JE PASSE")
             localStorage.setItem("isAuthenticated",!isAuthenticated);
+            localStorage.setItem("userData",JSON.stringify(userData));
         }else{
+            console.log("JE PASSE PAS")
             localStorage.removeItem("isAuthenticated");
+            localStorage.removeItem("userData");
         }
     }
 
@@ -80,13 +86,13 @@ function App(){
                 <Navbar isAuthenticated={isAuthenticated} handleLogout={handleLogout}/>
                 <div className="container mt-5 text-center">
                     <Switch>
-                        <Route path="/comment_note/:id" render = {props => <CommentNote {...props}/>} />
+                        <Route path="/comment_note/:id" render = {props => <CommentNote {...props} isAuthenticated={isAuthenticated}/>} />
                         <Route path="/schools/new" component={() => <NewSchool/>} />
                         <Route path="/schools/:id" render = {props => <UpdateSchool {...props}/>} />
                         <Route path="/schools" component={() => <IndexSchool/>} />
                         <Route path="/users" component={() => <IndexUser/>} />
                         <Route path="/categorys" component={() => <IndexCategory/>} />
-                        <Route path="/login" render={props => <Login {...props} isAuthenticated={isAuthenticated} handleAuthenticated={handleAuthenticated} handleReject={handleReject}/>} />
+                        <Route path="/login" render={props => <Login {...props} isAuthenticated={isAuthenticated} handleAuthenticated={handleAuthenticated} handleReject={handleReject} deleteFrontAuth={deleteFrontAuth}/>} />
                         <Route path="/" component={() => <Home handleReject={handleReject}/>} />
                     </Switch>
                 </div>

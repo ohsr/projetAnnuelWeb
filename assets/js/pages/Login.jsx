@@ -6,7 +6,7 @@ import Field from "../componants/Field";
 import { toast } from 'react-toastify'
 
 
-const Login = ({history,isAuthenticated,handleAuthenticated,handleReject}) =>{
+const Login = ({history,isAuthenticated,handleAuthenticated,handleReject,deleteFrontAuth}) =>{
     toast.configure();
     const [credentials, setCredentials]= useState({
         username: "",
@@ -14,21 +14,18 @@ const Login = ({history,isAuthenticated,handleAuthenticated,handleReject}) =>{
     });
 
     useEffect(() => {
-       if(isAuthenticated){
-           localStorage.removeItem("isAuthenticated");
-           handleAuthenticated();
-       }
+        deleteFrontAuth();
     },[]);
+
     const handleSubmit =  event =>{
         event.preventDefault();
-        SecurityService.login(credentials)
-        .then((response)=> {
-            handleAuthenticated()
-            history.replace("/");
-            toast.success("Connexion réusssie !");
-        })
-        .catch((err)=>{
-            let error ="";
+        SecurityService.login(credentials).then(response=>{
+            SecurityService.userInfo().then(user =>{
+                handleAuthenticated(user.data)
+                history.replace("/");
+                toast.success("Connexion réusssie !");
+            })
+        }).catch(err=>{
             toast.error(handleReject(err.response.data.message));
             setCredentials({
                 username: credentials.username,

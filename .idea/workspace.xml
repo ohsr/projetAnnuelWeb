@@ -3,9 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="7d4324e1-3564-44b6-8327-c116fa5fcd2a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/componants/CommentNotePart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/componants/CommentNotePart.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/pages/CommentNote.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/CommentNote.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/lexik_jwt_authentication.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/lexik_jwt_authentication.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Events/SchoolNoteSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Events/SchoolNoteSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/services/SecurityService.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/services/SecurityService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/services/SecurityService.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AppController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Listeners/AuthenticationSuccessListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/AuthenticationSuccessListener.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,22 +208,7 @@
       <list>
         <serviceView>
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:@projetAnnuel" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:@projetAnnuel" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@28a28646" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:@projetAnnuel" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@603afbc1" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -267,6 +259,8 @@
       <workItem from="1577894311529" duration="7313000" />
       <workItem from="1577983888286" duration="2370000" />
       <workItem from="1577989391850" duration="6397000" />
+      <workItem from="1578064205318" duration="7147000" />
+      <workItem from="1578151347640" duration="6135000" />
     </task>
     <servers />
   </component>
@@ -315,22 +309,22 @@
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
     <state x="557" y="30" width="795" height="976" key="CommitChangelistDialog2/0.0.1920.1041@0.0.1920.1041" timestamp="1577900447501" />
-    <state width="1291" height="77" key="GridCell.Tab.0.bottom" timestamp="1576426288429">
+    <state width="1291" height="77" key="GridCell.Tab.0.bottom" timestamp="1578065286891">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
-    <state width="1291" height="77" key="GridCell.Tab.0.bottom/0.0.1920.1041@0.0.1920.1041" timestamp="1576426288429" />
-    <state width="1291" height="77" key="GridCell.Tab.0.center" timestamp="1576426288427">
+    <state width="1291" height="77" key="GridCell.Tab.0.bottom/0.0.1920.1041@0.0.1920.1041" timestamp="1578065286891" />
+    <state width="1291" height="77" key="GridCell.Tab.0.center" timestamp="1578065286891">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
-    <state width="1291" height="77" key="GridCell.Tab.0.center/0.0.1920.1041@0.0.1920.1041" timestamp="1576426288427" />
-    <state width="1291" height="77" key="GridCell.Tab.0.left" timestamp="1576426288427">
+    <state width="1291" height="77" key="GridCell.Tab.0.center/0.0.1920.1041@0.0.1920.1041" timestamp="1578065286891" />
+    <state width="1291" height="77" key="GridCell.Tab.0.left" timestamp="1578065286891">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
-    <state width="1291" height="77" key="GridCell.Tab.0.left/0.0.1920.1041@0.0.1920.1041" timestamp="1576426288427" />
-    <state width="1291" height="77" key="GridCell.Tab.0.right" timestamp="1576426288428">
+    <state width="1291" height="77" key="GridCell.Tab.0.left/0.0.1920.1041@0.0.1920.1041" timestamp="1578065286891" />
+    <state width="1291" height="77" key="GridCell.Tab.0.right" timestamp="1578065286891">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
-    <state width="1291" height="77" key="GridCell.Tab.0.right/0.0.1920.1041@0.0.1920.1041" timestamp="1576426288428" />
+    <state width="1291" height="77" key="GridCell.Tab.0.right/0.0.1920.1041@0.0.1920.1041" timestamp="1578065286891" />
     <state width="220" height="539" key="HiddenNamespacesPopup" timestamp="1575146752140">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
@@ -351,10 +345,10 @@
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
     <state x="817" y="409" width="317" height="256" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1041@0.0.1920.1041" timestamp="1575729142115" />
-    <state x="636" y="105" width="648" height="828" key="find.popup" timestamp="1577894466285">
+    <state x="636" y="105" width="648" height="828" key="find.popup" timestamp="1578154031171">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
-    <state x="636" y="105" width="648" height="828" key="find.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1577894466285" />
+    <state x="636" y="105" width="648" height="828" key="find.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1578154031171" />
     <state x="688" y="301" width="543" height="435" key="git4idea.merge.GitMergeDialog" timestamp="1577840772197">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
@@ -363,9 +357,9 @@
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
     <state x="624" y="237" key="run.anything.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1577839540742" />
-    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1577809960744">
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1578152268387">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
-    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1577809960744" />
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1578152268387" />
   </component>
 </project>
