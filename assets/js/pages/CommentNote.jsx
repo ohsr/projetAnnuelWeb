@@ -4,10 +4,11 @@ import SchoolService from "../services/SchoolService";
 import CategoryService from "../services/CategoryService";
 import CommentService from "../services/CommentService";
 import ImgRender from "../componants/ImgRender";
-
 import CommentNotepart from "../componants/CommentNotePart";
+import { toast } from 'react-toastify';
 
-const CommentNote = ({match,isAuthenticated}) =>{
+const CommentNote = ({match,isAuthenticated,handleReject}) =>{
+    toast.configure()
     const [school,setSchool] = useState([]);
     const [loading,setLoading ] = useState(true);
 
@@ -34,7 +35,7 @@ const CommentNote = ({match,isAuthenticated}) =>{
                 .catch(err => {
                     setLoading(false)
                     console.log("Erreur lors de la sélection")
-                    console.log(err.response)
+                    toast.error(handleReject(err.response.data.message));
                 })
         },[]
     );
@@ -46,8 +47,8 @@ const CommentNote = ({match,isAuthenticated}) =>{
             rating += comment.note;
             count ++;
         })
-        console.log(rating)
-        console.log(count)
+        //console.log(rating)
+        //console.log(count)
         return (rating/count).toFixed(1);
     }
     const handleCommentsAndNotes = (school,categoryVal) =>{
@@ -65,6 +66,8 @@ const CommentNote = ({match,isAuthenticated}) =>{
                 console.log(err.response)
             })
     }
+
+
     return(
         <>
             <h2 className="text-center bg-primary p-2 text-light">Noter et Commenter</h2>
@@ -105,7 +108,11 @@ const CommentNote = ({match,isAuthenticated}) =>{
                         {
                             firstClick
                             &&
-                                <CommentNotepart isAuthenticated={isAuthenticated} category={categoryChoosen} comments={comments} loadingComments={loadingComments} categoryMoy={categoryMoy}/>
+                                <CommentNotepart
+                                    isAuthenticated={isAuthenticated} handleReject={handleReject}
+                                    category={categoryChoosen} comments={comments}
+                                    loadingComments={loadingComments} categoryMoy={categoryMoy}
+                                    school={school}/>
                         }
                     </div>
                 </div>

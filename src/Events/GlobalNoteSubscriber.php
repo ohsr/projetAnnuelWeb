@@ -30,8 +30,11 @@ class GlobalNoteSubscriber implements EventSubscriberInterface{
         $rating = 0;
         $count = 0;
         foreach ($comments as $comment){
-            $rating += ( $comment->getCategorys()->getCoefficient() * $comment->getNote());
-            $count += $comment->getCategorys()->getCoefficient();
+            if($comment->getCategorys()){
+                $rating += ( $comment->getCategorys()->getCoefficient() * $comment->getNote());
+                $count += $comment->getCategorys()->getCoefficient();
+            }
+
         }
         if($count == 0)$count = 1;
         $result = $rating / $count;

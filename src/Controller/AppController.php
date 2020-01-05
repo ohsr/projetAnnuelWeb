@@ -48,12 +48,13 @@ class AppController extends AbstractController
      * @Route("/api/profile", name="my_profile", methods={"GET"})
      */
     public function profile(){
-        if($this->isGranted("IS_AUTHENTICATED_FULLY")){
-            $response = $this->json($this->getUser());
-        }else{
-            $response = new AccessDeniedException();
-        }
-        return $response;
+        $user = $this->getUser();
+        return $this->json([
+            "id" => $user->getId(),
+            "firstName" => $user->getFirstName(),
+            "lastName" => $user->getLastName(),
+            "roles" => $user->getRoles(),
+        ]);
     }
 
 }

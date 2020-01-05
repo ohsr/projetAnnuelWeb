@@ -1,10 +1,38 @@
-import React from 'react';
+import React,{useState} from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 import StarRatings from 'react-star-ratings'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfoCircle,faStar,faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
+import CommentService from "../services/CommentService";
+import { toast } from 'react-toastify';
 
-const CommentNotePart = ({isAuthenticated,category,comments,loadingComments,categoryMoy}) =>{
+const CommentNotePart = ({isAuthenticated,handleReject,category,comments,loadingComments,categoryMoy,school}) =>{
+    toast.configure()
+    const [commentNote,setCommentNote] = useState({
+        note: 0,
+        comment: ""
+    })
+    const handleSubmit = (event) =>{
+        event.preventDefault();
+        commentNote.note = parseInt(commentNote.note);
+        commentNote["categorys"] = `/api/categories/${category.id}`;
+        commentNote["schools"] = `/api/schools/${school.id}`;
+        CommentService.create(commentNote).then(response=>{
+                toast.success("Votre Commentaire a bien été posté");
+            }
+        ).catch(err =>{
+            toast.error(handleReject(err.response.data.message));
+            setCommentNote({
+                note: 0,
+                comment: ""
+            })
+        })
+    }
+    const handleChange = (event) =>{
+        let name = event.currentTarget.name;
+        let value = event.currentTarget.value;
+        setCommentNote({...commentNote,[name]:value })
+    }
     return(
         <>
             <div className="card card-body mt-5">
@@ -20,15 +48,15 @@ const CommentNotePart = ({isAuthenticated,category,comments,loadingComments,cate
                 <hr/>
                 { isAuthenticated
                 &&
-                <form className="border border-primary m-5">
+                <form className="border border-primary m-5" onSubmit={handleSubmit}>
                     <h5 className="text-center bg-primary p-2 text-light">Noter & Commenter l'école pour son {category.name}</h5>
                     <div className="form-group">
                         <label htmlFor="note">Note</label>
-                        <input type="number" name="note" id="note" className="form-control"/>
+                        <input type="number" name="note" id="note" className="form-control" onChange={handleChange}/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="comment">Commentaire</label>
-                        <textarea name="comment" id="comment" className="form-control"></textarea>
+                        <textarea name="comment" id="comment" className="form-control" onChange={handleChange}></textarea>
                     </div>
                     <button type="submit" className="btn btn-success mb-2 ">Commenter</button>
                 </form>

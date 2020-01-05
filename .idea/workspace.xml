@@ -6,13 +6,12 @@
       <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/componants/CommentNotePart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/componants/CommentNotePart.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/pages/CommentNote.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/CommentNote.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/services/CommentService.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/services/CommentService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/services/SecurityService.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/services/SecurityService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/services/SecurityService.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AppController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Listeners/AuthenticationSuccessListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners/AuthenticationSuccessListener.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Events/GlobalNoteSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Events/GlobalNoteSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/app/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +207,17 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:@projetAnnuel" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:@projetAnnuel" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@16dc01ef" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -260,7 +269,8 @@
       <workItem from="1577983888286" duration="2370000" />
       <workItem from="1577989391850" duration="6397000" />
       <workItem from="1578064205318" duration="7147000" />
-      <workItem from="1578151347640" duration="6135000" />
+      <workItem from="1578151347640" duration="8973000" />
+      <workItem from="1578241915921" duration="6895000" />
     </task>
     <servers />
   </component>
@@ -353,10 +363,10 @@
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
     <state x="688" y="301" width="543" height="435" key="git4idea.merge.GitMergeDialog/0.0.1920.1041@0.0.1920.1041" timestamp="1577840772197" />
-    <state x="624" y="237" key="run.anything.popup" timestamp="1577839540742">
+    <state x="624" y="237" key="run.anything.popup" timestamp="1578248092757">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>
-    <state x="624" y="237" key="run.anything.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1577839540742" />
+    <state x="624" y="237" key="run.anything.popup/0.0.1920.1041@0.0.1920.1041" timestamp="1578248092757" />
     <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1578152268387">
       <screen x="0" y="0" width="1920" height="1041" />
     </state>

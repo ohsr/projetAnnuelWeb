@@ -86,7 +86,7 @@ function App(){
                 <Navbar isAuthenticated={isAuthenticated} handleLogout={handleLogout}/>
                 <div className="container mt-5 text-center">
                     <Switch>
-                        <Route path="/comment_note/:id" render = {props => <CommentNote {...props} isAuthenticated={isAuthenticated}/>} />
+                        <Route path="/comment_note/:id" render = {props => <CommentNote {...props} isAuthenticated={isAuthenticated} handleReject={handleReject}/>} />
                         <Route path="/schools/new" component={() => <NewSchool/>} />
                         <Route path="/schools/:id" render = {props => <UpdateSchool {...props}/>} />
                         <Route path="/schools" component={() => <IndexSchool/>} />
