@@ -27,6 +27,21 @@ class AppFixtures extends Fixture
         $manager->persist($category);
         return $category;
     }
+    public function calculMoy($school, $manager){
+        $comments = $manager->getRepository(UserCommentSchool::class)->findBy(["schools"=>$school]);
+        $rating = 0;
+        $count = 0;
+        foreach ($comments as $comment){
+            if($comment->getCategorys()){
+                $rating += ( $comment->getCategorys()->getCoefficient() * $comment->getNote());
+                $count += $comment->getCategorys()->getCoefficient();
+            }
+
+        }
+        if($count == 0)$count = 1;
+        $result = $rating / $count;
+        return $result;
+    }
     public function getRandom($entity,$manager){
         $data = $manager->getRepository($entity)->findAll();
         shuffle($data);
@@ -100,11 +115,14 @@ class AppFixtures extends Fixture
                     $userCommentSchool->setComment($faker->realText(200));
                     $userCommentSchool->setNote($faker->numberBetween(0,5));
                     $userCommentSchool->setCreatedAt(new \DateTime("now"));
+                    $school = $userCommentSchool->getSchools();
+                    $school->setGlobalNote(round($this->calculMoy($userCommentSchool->getSchools()->getId(),$manager),2));
                     $manager->persist($userCommentSchool);
+                    $manager->flush();
+
                 }
             }
         }
 
-        $manager->flush();
     }
 }
