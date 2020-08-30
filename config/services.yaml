@@ -4,6 +4,13 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_port: 1025
+    mailer_user: null
+    mailer_password: null
+    MJ_APIKEY_PUBLIC: '%env(MJ_APIKEY_PUBLIC)%'
+    MJ_APIKEY_PRIVATE: '%env(MJ_APIKEY_PRIVATE)%'
 
 services:
     # default configuration for services in *this* file

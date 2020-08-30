@@ -60,6 +60,17 @@ class AppFixtures extends Fixture
         $this->staticCategory("Ambiance", 1,"Ambiance au sein de l'établissement (Bonne entente,bienveillance,solidarité,évenements sociaux,fêtes)",$manager);
         $this->staticCategory("Coûts",2,"Coûts de l'établissement (uniquement pour les écoles privées hors contract)",$manager);
 
+
+        $user = new User();
+        $user->setEmail("admin@admin.com");
+        $user->setPassword($this->encoder->encodePassword($user,"Password"));
+        $user->setIsVerified(1);
+
+        $user->setRoles(["ROLE_ADMIN"]);
+        $user->setFirstName($faker->firstName);
+        $user->setLastName($faker->lastName);
+        $manager->persist($user);
+
         for($i=0;$i<=20;$i++){
             $user = new User();
             $user->setEmail($faker->email);
@@ -67,6 +78,8 @@ class AppFixtures extends Fixture
             $user->setRoles(["ROLE_USER"]);
             $user->setFirstName($faker->firstName);
             $user->setLastName($faker->lastName);
+            $user->setIsVerified(0);
+
             $manager->persist($user);
         }
         $manager->flush();

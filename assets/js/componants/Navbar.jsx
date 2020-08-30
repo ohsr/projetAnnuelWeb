@@ -13,25 +13,31 @@ const Navbar = ({isAuthenticated,handleLogout}) =>{
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarColor01">
-                    <ul className="navbar-nav mr-auto">
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/schools">Ecoles</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/categorys">Catégories</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/users">Utilisateurs</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Mon Profil</a>
-                        </li>
-                    </ul>
+                    {isAuthenticated
+                    &&
+                        <ul className="navbar-nav mr-auto">
+
+                            <li className="nav-item">
+                                    <NavLink className="nav-link" to="/schools">Ecoles</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/categorys">Catégories</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/users">Utilisateurs</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">Mon Profil</a>
+                            </li>
+                        </ul>
+
+                    }
+                        
                     <ul className="navbar-nav ml-auto">
                         {!isAuthenticated &&
                         <>
                             <li>
-                                <a href="#" className="nav-link">Inscription</a>
+                                <NavLink to="/register" className="nav-link">Inscription</NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink to="/login" className="btn btn-success">Connexion</NavLink>

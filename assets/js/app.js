@@ -13,15 +13,15 @@ import NewSchool from "./pages/School/newSchool";
 import UpdateSchool from "./pages/School/updateSchool";
 import CommentNote from "./pages/CommentNote";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 require('../css/app.css');
 import 'react-toastify/dist/ReactToastify.css';
-import $ from 'jquery';
-import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min'
 
 function App(){
     const [isAuthenticated,setIsAuthenticated] =useState(false);
+    const [userData,setUserData] =useState(localStorage.getItem("userData"));
 
     useEffect(() => {
         if(localStorage.getItem("isAuthenticated")){
@@ -54,11 +54,10 @@ function App(){
         setIsAuthenticated(!isAuthenticated);
         console.log(userData)
         if(isAuthenticated || userData){
-            console.log("JE PASSE")
             localStorage.setItem("isAuthenticated",!isAuthenticated);
             localStorage.setItem("userData",JSON.stringify(userData));
+            setUserData(userData)
         }else{
-            console.log("JE PASSE PAS")
             localStorage.removeItem("isAuthenticated");
             localStorage.removeItem("userData");
         }
@@ -92,8 +91,11 @@ function App(){
                         <Route path="/schools" component={() => <IndexSchool/>} />
                         <Route path="/users" component={() => <IndexUser/>} />
                         <Route path="/categorys" component={() => <IndexCategory/>} />
-                        <Route path="/login" render={props => <Login {...props} isAuthenticated={isAuthenticated} handleAuthenticated={handleAuthenticated} handleReject={handleReject} deleteFrontAuth={deleteFrontAuth}/>} />
-                        <Route path="/" component={() => <Home handleReject={handleReject}/>} />
+                        <Route path="/login" render={props => <Login {...props} isAuthenticated={isAuthenticated} 
+                            handleAuthenticated={handleAuthenticated} handleReject={handleReject} deleteFrontAuth={deleteFrontAuth}/>} 
+                        />
+                        <Route path="/register" render={props => <Register {...props} />} />
+                        <Route path="/" component={() => <Home handleReject={handleReject} userData={userData} />} />
                     </Switch>
                 </div>
             </HashRouter>

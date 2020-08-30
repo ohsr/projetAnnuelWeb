@@ -10,7 +10,7 @@ import {NavLink} from "react-router-dom";
 import ImgRender from "../componants/ImgRender";
 import { toast } from 'react-toastify';
 
-const Home = ({handleReject}) =>{
+const Home = ({handleReject,userData}) =>{
     toast.configure();
     const [schools,setSchools] = useState([]);
     const [loading,setLoading ] = useState(true);
@@ -80,6 +80,10 @@ const Home = ({handleReject}) =>{
                 </div>
                 
             </div>
+            {userData.isVerified
+                &&
+                    <NavLink to="/" className="btn btn-lg btn-primary">Ajouter une école</NavLink>
+            }
             {
                 loading
                 &&

@@ -1,12 +1,15 @@
 import React,{useState,useEffect} from 'react';
 import axios from "axios";
+import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faIdCard, faMailBulk, faUser ,faCog } from '@fortawesome/free-solid-svg-icons';
 import ClipLoader from 'react-spinners/ClipLoader';
 import Pagination from "../../componants/Pagination";
+import SecurityService from '../../services/SecurityService';
 
 const IndexUser = () =>{
 
+    toast.configure();
     const [users,setUsers] = useState([]);
     const [loading,setLoading ] = useState(true);
     const [totalItems, setTotalItems] = useState(0);
@@ -26,6 +29,14 @@ const IndexUser = () =>{
         setCurrentPage(page);
         setLoading(true);
     };
+
+    const handleVerify = (userId) =>{
+        SecurityService.verify(userId).then((response)=>{
+            toast.success("Vous avez bien modifié la vérification");
+        }).catch((error)=>{
+            console.log(error);
+        })
+    }
     return(
         <>
             <h1 className="bg-primary p-2 text-center text-light">Liste des Utilisateurs</h1>
@@ -47,7 +58,7 @@ const IndexUser = () =>{
                         <th><FontAwesomeIcon icon={ faUser} /><br/> Prénom</th>
                         <th><FontAwesomeIcon icon={ faUser} /><br/> Nom</th>
                         <th><FontAwesomeIcon icon={ faUser } /><br/> Role</th>
-                        <th colSpan={2}><FontAwesomeIcon icon={ faCog} /><br/> Actions</th>
+                        <th colSpan={3}><FontAwesomeIcon icon={ faCog} /><br/> Actions</th>
                     </thead>
                     <tbody>
                     {users.map(user =>(
@@ -58,11 +69,17 @@ const IndexUser = () =>{
                             <td>{user.lastName}</td>
                             <td>{user.roles}</td>
                             <td>
+                                
+                                    <button className={`btn btn-sm ${user.isVerified ? 'btn-outline-success' : 'btn-success' } `} onClick= { () =>handleVerify(user.id)}>{user.isVerified && "Annuler Vérif" || "Vérifier"}</button>
+                                 
+                            </td>
+                            <td>
                                 <button className="btn btn-warning btn-sm">Modifier</button>
                             </td>
                             <td>
                                 <button className="btn btn-danger btn-sm">Supprimer</button>
                             </td>
+                           
                         </tr>
                     ))}
                     </tbody>
