@@ -44,6 +44,7 @@ class RegisterSubsriber implements EventSubscriberInterface
         if($data instanceof User && $request->getMethod() == "POST"){
             $hash = $this->encoder->encodePassword($data,$data->getPassword());
             $data->setPassword($hash);
+            $data->setIsVerified(false);
             
 
             if(!in_array("ROLE_USER",$data->getRoles()) && !in_array("ROLE_SCHOOL",$data->getRoles())){

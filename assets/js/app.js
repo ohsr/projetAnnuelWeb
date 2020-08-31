@@ -21,7 +21,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min'
 
 function App(){
     const [isAuthenticated,setIsAuthenticated] =useState(false);
-    const [userData,setUserData] =useState(localStorage.getItem("userData"));
+    const [userData,setUserData] =useState(JSON.parse(localStorage.getItem("userData")));
 
     useEffect(() => {
         if(localStorage.getItem("isAuthenticated")){
@@ -82,7 +82,7 @@ function App(){
     }
     return(
             <HashRouter>
-                <Navbar isAuthenticated={isAuthenticated} handleLogout={handleLogout}/>
+                <Navbar isAuthenticated={isAuthenticated} handleLogout={handleLogout} userData={userData} />
                 <div className="container mt-5 text-center">
                     <Switch>
                         <Route path="/comment_note/:id" render = {props => <CommentNote {...props} isAuthenticated={isAuthenticated} handleReject={handleReject}/>} />

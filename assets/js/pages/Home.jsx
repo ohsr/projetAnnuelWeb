@@ -80,9 +80,12 @@ const Home = ({handleReject,userData}) =>{
                 </div>
                 
             </div>
-            {userData.isVerified
+            {userData
                 &&
-                    <NavLink to="/" className="btn btn-lg btn-primary">Ajouter une école</NavLink>
+                ((userData.isVerified || userData.roles.includes("ROLE_ADMIN"))
+                    &&
+                        <NavLink to="/schools/new" className="btn btn-lg btn-primary mt-3">Ajouter une école 🏫</NavLink>
+                )
             }
             {
                 loading

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useDebugValue } from 'react';
 import ReactDOM from "react-dom";
 import {NavLink} from "react-router-dom";
 
-const Navbar = ({isAuthenticated,handleLogout}) =>{
+const Navbar = ({isAuthenticated,handleLogout,userData}) =>{
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -17,18 +17,34 @@ const Navbar = ({isAuthenticated,handleLogout}) =>{
                     &&
                         <ul className="navbar-nav mr-auto">
 
-                            <li className="nav-item">
-                                    <NavLink className="nav-link" to="/schools">Ecoles</NavLink>
-                                </li>
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/categorys">Catégories</NavLink>
-                                </li>
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/users">Utilisateurs</NavLink>
-                                </li>
+                            {userData &&
+                            
+                                ((userData.isVerified || userData.roles.includes("ROLE_ADMIN"))
+                                &&
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link" to="/schools">Ecoles</NavLink>
+                                    </li>
+                                )
+                                
+                            }
+                            {userData &&
+                            
+                                (userData.roles.includes("ROLE_ADMIN") 
+                                &&
+                                    <>
+                                        <li className="nav-item">
+                                            <NavLink className="nav-link" to="/categorys">Catégories</NavLink>
+                                        </li>
+                                        <li className="nav-item">
+                                            <NavLink className="nav-link" to="/users">Utilisateurs</NavLink>
+                                        </li>
+                                    </>
+                                )
+                            }
+                            
                                 <li className="nav-item">
                                     <a className="nav-link" href="#">Mon Profil</a>
-                            </li>
+                                </li>
                         </ul>
 
                     }
